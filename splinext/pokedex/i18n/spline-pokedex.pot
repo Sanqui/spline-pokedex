@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: spline-pokedex 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2010-10-01 21:26+0300\n"
+"POT-Creation-Date: 2010-10-02 00:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,71 +17,71 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
-#: splinext/pokedex/__init__.py:168
+#: splinext/pokedex/__init__.py:170
 #: splinext/pokedex/templates/pokedex/ability.mako:11
 #: splinext/pokedex/templates/pokedex/ability_list.mako:9
 #: splinext/pokedex/templates/pokedex/pokemon.mako:17
 msgid "Pokédex"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:169
+#: splinext/pokedex/__init__.py:171
 msgid "Core pages"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:170
-#: splinext/pokedex/templates/pokedex/ability.mako:79
-msgid "plural|Pokémon"
+#: splinext/pokedex/__init__.py:172
+#: splinext/pokedex/templates/pokedex/pokemon.mako:18
+msgid "Pokémon"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:171 splinext/pokedex/__init__.py:174
+#: splinext/pokedex/__init__.py:173 splinext/pokedex/__init__.py:176
 msgid "Awesome search"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:173
+#: splinext/pokedex/__init__.py:175
 #: splinext/pokedex/templates/pokedex/pokemon.mako:587
 msgid "Moves"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:176
+#: splinext/pokedex/__init__.py:178
 msgid "Types"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:177
+#: splinext/pokedex/__init__.py:179
 #: splinext/pokedex/templates/pokedex/ability.mako:12
 #: splinext/pokedex/templates/pokedex/ability_list.mako:10
 #: splinext/pokedex/templates/pokedex/pokemon.mako:50
 msgid "Abilities"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:178
+#: splinext/pokedex/__init__.py:180
 msgid "Items"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:179
+#: splinext/pokedex/__init__.py:181
 msgid "Natures"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:181
+#: splinext/pokedex/__init__.py:183
 msgid "Gadgets"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:182
+#: splinext/pokedex/__init__.py:184
 msgid "Compare Pokémon"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:183
+#: splinext/pokedex/__init__.py:185
 msgid "Pokéball performance"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:184
+#: splinext/pokedex/__init__.py:186
 msgid "Stat calculator"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:186
+#: splinext/pokedex/__init__.py:188
 msgid "Etc."
 msgstr ""
 
-#: splinext/pokedex/__init__.py:187
+#: splinext/pokedex/__init__.py:189
 msgid "Downloads"
 msgstr ""
 
@@ -117,6 +117,10 @@ msgstr ""
 
 #: splinext/pokedex/templates/pokedex/ability.mako:63
 msgid "Foreign Names"
+msgstr ""
+
+#: splinext/pokedex/templates/pokedex/ability.mako:79
+msgid "plural|Pokémon"
 msgstr ""
 
 #: splinext/pokedex/templates/pokedex/ability.mako:97
@@ -163,10 +167,6 @@ msgstr ""
 #. Py3Format
 #: splinext/pokedex/templates/pokedex/pokemon.mako:11
 msgid "{name} – Pokémon #{number}"
-msgstr ""
-
-#: splinext/pokedex/templates/pokedex/pokemon.mako:18
-msgid "Pokémon"
 msgstr ""
 
 #. Py3Format

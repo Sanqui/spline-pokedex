@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: spline 0.1\n"
 "Report-Msgid-Bugs-To: encukou@gmail.com\n"
 "POT-Creation-Date: 2010-09-30 23:08+0300\n"
-"PO-Revision-Date: 2010-10-01 21:26+0300\n"
+"PO-Revision-Date: 2010-10-02 00:59+0200\n"
 "Last-Translator: Petr 'En-Cu-Kou' Viktorin <encukou@gmail.com>\n"
 "Language-Team: cs <encukou@gmail.com>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
@@ -19,80 +19,80 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
-#: splinext/pokedex/__init__.py:168
+#: splinext/pokedex/__init__.py:170
 #: splinext/pokedex/templates/pokedex/ability.mako:11
 #: splinext/pokedex/templates/pokedex/ability_list.mako:9
 #: splinext/pokedex/templates/pokedex/pokemon.mako:17
 msgid "Pokédex"
 msgstr "Pokédex"
 
-#: splinext/pokedex/__init__.py:169
+#: splinext/pokedex/__init__.py:171
 msgid "Core pages"
-msgstr ""
+msgstr "Hlavní stránky"
 
-#: splinext/pokedex/__init__.py:170
-#: splinext/pokedex/templates/pokedex/ability.mako:79
-msgid "plural|Pokémon"
-msgstr ""
+#: splinext/pokedex/__init__.py:172
+#: splinext/pokedex/templates/pokedex/pokemon.mako:18
+msgid "Pokémon"
+msgstr "Pokémon"
 
-#: splinext/pokedex/__init__.py:171 splinext/pokedex/__init__.py:174
+#: splinext/pokedex/__init__.py:173 splinext/pokedex/__init__.py:176
 msgid "Awesome search"
-msgstr ""
+msgstr "Úžasné vyhledávání"
 
-#: splinext/pokedex/__init__.py:173
+#: splinext/pokedex/__init__.py:175
 #: splinext/pokedex/templates/pokedex/pokemon.mako:587
 msgid "Moves"
 msgstr "Útoky"
 
-#: splinext/pokedex/__init__.py:176
+#: splinext/pokedex/__init__.py:178
 msgid "Types"
-msgstr ""
+msgstr "Typy"
 
-#: splinext/pokedex/__init__.py:177
+#: splinext/pokedex/__init__.py:179
 #: splinext/pokedex/templates/pokedex/ability.mako:12
 #: splinext/pokedex/templates/pokedex/ability_list.mako:10
 #: splinext/pokedex/templates/pokedex/pokemon.mako:50
 msgid "Abilities"
 msgstr "Schopnosti"
 
-#: splinext/pokedex/__init__.py:178
+#: splinext/pokedex/__init__.py:180
 msgid "Items"
-msgstr ""
-
-#: splinext/pokedex/__init__.py:179
-msgid "Natures"
-msgstr ""
+msgstr "Věci"
 
 #: splinext/pokedex/__init__.py:181
-msgid "Gadgets"
-msgstr ""
-
-#: splinext/pokedex/__init__.py:182
-msgid "Compare Pokémon"
-msgstr ""
+msgid "Natures"
+msgstr "Povahy"
 
 #: splinext/pokedex/__init__.py:183
-msgid "Pokéball performance"
-msgstr ""
+msgid "Gadgets"
+msgstr "Pomůcky"
 
 #: splinext/pokedex/__init__.py:184
-msgid "Stat calculator"
-msgstr ""
+msgid "Compare Pokémon"
+msgstr "Porovnat Pokémony"
+
+#: splinext/pokedex/__init__.py:185
+msgid "Pokéball performance"
+msgstr "Účinnost Pokéballů"
 
 #: splinext/pokedex/__init__.py:186
-msgid "Etc."
-msgstr ""
+msgid "Stat calculator"
+msgstr "Kalkulačka statů"
 
-#: splinext/pokedex/__init__.py:187
+#: splinext/pokedex/__init__.py:188
+msgid "Etc."
+msgstr "Etc."
+
+#: splinext/pokedex/__init__.py:189
 #, fuzzy
 msgid "Downloads"
 msgstr "Stáhnout"
 
 #. Py2Format
 #: splinext/pokedex/templates/pokedex/ability.mako:6
-#, fuzzy, python-format
+#, python-format
 msgid "%s - Abilities"
-msgstr "Schopnosti"
+msgstr "%s - Schopnosti"
 
 #: splinext/pokedex/templates/pokedex/ability.mako:35
 #: splinext/pokedex/templates/pokedex/pokemon.mako:31
@@ -102,11 +102,11 @@ msgstr "Základní informace"
 #: splinext/pokedex/templates/pokedex/ability.mako:42
 #: splinext/pokedex/templates/pokedex/ability_list.mako:28
 msgid "Summary"
-msgstr ""
+msgstr "Shrnutí"
 
 #: splinext/pokedex/templates/pokedex/ability.mako:49
 msgid "Effect"
-msgstr ""
+msgstr "Efekt"
 
 #: splinext/pokedex/templates/pokedex/ability.mako:55
 #: splinext/pokedex/templates/pokedex/pokemon.mako:413
@@ -120,6 +120,10 @@ msgstr ""
 
 #: splinext/pokedex/templates/pokedex/ability.mako:63
 msgid "Foreign Names"
+msgstr "Cizí jména"
+
+#: splinext/pokedex/templates/pokedex/ability.mako:79
+msgid "plural|Pokémon"
 msgstr ""
 
 #: splinext/pokedex/templates/pokedex/ability.mako:97
@@ -169,10 +173,6 @@ msgstr "Jména"
 #: splinext/pokedex/templates/pokedex/pokemon.mako:11
 msgid "{name} – Pokémon #{number}"
 msgstr "{name} – Pokémon č. {number}"
-
-#: splinext/pokedex/templates/pokedex/pokemon.mako:18
-msgid "Pokémon"
-msgstr "Pokémon"
 
 #. Py3Format
 #: splinext/pokedex/templates/pokedex/pokemon.mako:37
