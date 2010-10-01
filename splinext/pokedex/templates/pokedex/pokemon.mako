@@ -4,12 +4,18 @@
 <%! from splinext.pokedex import db %>\
 <%! import re %>\
 
-<%def name="title()">${c.pokemon.full_name} - Pokémon #${c.pokemon.national_id}</%def>
+<%! from splinext.pokedex import i18n %>\
+
+<%def name="title()">
+    <% _ = i18n.Translator(c) %>
+    ${_(u"{name} – Pokémon #{number}").format(name=c.pokemon.full_name, number=c.pokemon.national_id)}
+</%def>
 
 <%def name="title_in_page()">
+<% _ = i18n.Translator(c) %>
 <ul id="breadcrumbs">
-    <li><a href="${url('/dex')}">Pokédex</a></li>
-    <li><a href="${url(controller='dex', action='pokemon_list')}">Pokémon</a></li>
+    <li><a href="${url('/dex')}">${_(u'Pokédex')}</a></li>
+    <li><a href="${url(controller='dex', action='pokemon_list')}">${_(u'Pokémon')}</a></li>
     <li>${c.pokemon.full_name}</li>
 </ul>
 </%def>
@@ -18,13 +24,15 @@ ${dexlib.pokemon_page_header()}
 
 
 <%lib:cache_content>
-${h.h1('Essentials')}
+<% _ = i18n.Translator(c) %>
+
+${h.h1(_('Essentials'))}
 
 ## Portrait block
 <div class="dex-page-portrait">
     <p id="dex-page-name">${c.pokemon.name}</p>
     % if c.pokemon.forme_name:
-    <p id="dex-pokemon-forme">${c.pokemon.forme_name.capitalize()} Forme</p>
+    <p id="dex-pokemon-forme">${_("{0} Forme").format(c.pokemon.forme_name.capitalize())}</p>
     % endif
     <div id="dex-pokemon-portrait-sprite">
         ${h.pokedex.pokemon_sprite(c.pokemon, prefix='black-white')}
@@ -37,7 +45,7 @@ ${h.h1('Essentials')}
 </div>
 
 <div class="dex-page-beside-portrait">
-<h2>Abilities</h2>
+<h2>${_(u"Abilities")}</h2>
 <dl class="pokemon-abilities">
     % for ability in c.pokemon.abilities:
     <dt><a href="${url(controller='dex', action='abilities', name=ability.name.lower())}">${ability.name}</a></dt>
@@ -45,7 +53,7 @@ ${h.h1('Essentials')}
     % endfor
 </dl>
 
-<h2>Damage Taken</h2>
+<h2>${_(u"Damage Taken")}</h2>
 ## Boo not using <dl>  :(  But I can't get them to align horizontally with CSS2
 ## if the icon and value have no common element..
 <ul class="dex-type-list">
@@ -61,9 +69,9 @@ ${h.h1('Essentials')}
 
 <div class="dex-column-container">
 <div class="dex-column">
-    <h2>Pokédex Numbers</h2>
+    <h2>${_(u"Pokédex Numbers")}</h2>
     <dl>
-        <dt>Introduced in</dt>
+        <dt>${_(u"Introduced in")}</dt>
         <dd>${h.pokedex.generation_icon(c.pokemon.generation)}</dd>\
 
         % for number in c.pokemon.normal_form.dex_numbers:
@@ -78,7 +86,7 @@ ${h.h1('Essentials')}
         % endfor
     </dl>
 
-    <h2>Names</h2>
+    <h2>${_(u"Names")}</h2>
     <dl>
         % for foreign_name in c.pokemon.normal_form.foreign_names:
         ## </dt> has to come right after the flag or else there's space between the flag and the colon
@@ -93,9 +101,9 @@ ${h.h1('Essentials')}
     </dl>
 </div>
 <div class="dex-column">
-    <h2>Breeding</h2>
+    <h2>${_(u"Breeding")}</h2>
     <dl>
-        <dt>Gender</dt>
+        <dt>${_(u"Gender")}</dt>
         <dd>
             ${h.pokedex.pokedex_img('gender-rates/%d.png' % c.pokemon.gender_rate, alt='')}
             ${h.pokedex.gender_rate_label[c.pokemon.gender_rate]}
@@ -105,7 +113,7 @@ ${h.h1('Essentials')}
             </a>
         </dd>
 
-        <dt>Egg groups</dt>
+        <dt>${_(u"Egg groups")}</dt>
         <dd>
             <ul class="inline-commas">
                 % for i, egg_group in enumerate(c.pokemon.egg_groups):
@@ -120,7 +128,7 @@ ${h.h1('Essentials')}
             % endif
         </dd>
 
-        <dt>Hatch counter</dt>
+        <dt>${_(u"Hatch counter")}</dt>
         <dd>
             ${c.pokemon.hatch_counter}
             <a href="${url(controller='dex_search', action='pokemon_search', hatch_counter=c.pokemon.hatch_counter, sort='evolution-chain')}"
@@ -129,7 +137,7 @@ ${h.h1('Essentials')}
             </a>
         </dd>
 
-        <dt>Steps to hatch</dt>
+        <dt>${_(u"Steps to hatch")}</dt>
         <dd>
             ${(c.pokemon.hatch_counter + 1) * 255} /
 
@@ -141,13 +149,13 @@ ${h.h1('Essentials')}
         </dd>
     </dl>
 
-    <h2>Compatibility</h2>
+    <h2>${_(u"Compatibility")}</h2>
     % if c.pokemon.egg_groups[0].id == 13:
     ## Egg group 13 is the special Ditto group
-    <p>Ditto can breed with any other breedable Pokémon, but can never produce a Ditto egg.</p>
+    <p>${_(u"Ditto can breed with any other breedable Pokémon, but can never produce a Ditto egg.")}</p>
     % elif c.pokemon.egg_groups[0].id == 15:
     ## Egg group 15 is the special No Eggs group
-    <p>${c.pokemon.name} cannot breed.</p>
+    <p>${_("{0} cannot breed.").format(c.pokemon.name)}.</p>
     % else:
     <ul class="inline dex-pokemon-compatibility">
         % for pokemon in c.compatible_families:
@@ -162,9 +170,9 @@ ${h.h1('Essentials')}
     % endif
 </div>
 <div class="dex-column">
-    <h2>Training</h2>
+    <h2>${_(u"Training")}</h2>
     <dl>
-        <dt>Base EXP</dt>
+        <dt>${_(u"Base EXP")}</dt>
         <dd>
             <span id="dex-pokemon-exp-base">${c.pokemon.base_experience}</span>
             <a href="${url(controller='dex_search', action='pokemon_search', base_experience=c.pokemon.base_experience)}"
@@ -172,10 +180,10 @@ ${h.h1('Essentials')}
                 <img src="${h.static_uri('spline', 'icons/magnifier-small.png')}" alt="Search: " title="Search">
             </a>
             <br/>
-            <span id="dex-pokemon-exp">${h.pokedex.formulae.earned_exp(base_exp=c.pokemon.base_experience, level=100)}</span> EXP
-            at level <input type="text" size="3" value="100" id="dex-pokemon-exp-level">
+            <span id="dex-pokemon-exp">${h.pokedex.formulae.earned_exp(base_exp=c.pokemon.base_experience, level=100)}</span>
+            ${_(u"EXP at level")} <input type="text" size="3" value="100" id="dex-pokemon-exp-level">
         </dd>
-        <dt>Effort points</dt>
+        <dt>${_(u"Effort points")}</dt>
         <dd>
             <ul>
                 % for pokemon_stat in c.pokemon.stats:
@@ -185,7 +193,7 @@ ${h.h1('Essentials')}
                 % endfor
             </ul>
         </dd>
-        <dt>Capture rate</dt>
+        <dt>${_(u"Capture rate")}</dt>
         <dd>
             ${c.pokemon.capture_rate}
             <a href="${url(controller='dex_search', action='pokemon_search', capture_rate=c.pokemon.capture_rate)}"
@@ -193,7 +201,7 @@ ${h.h1('Essentials')}
                 <img src="${h.static_uri('spline', 'icons/magnifier-small.png')}" alt="Search: " title="Search">
             </a>
         </dd>
-        <dt>Base happiness</dt>
+        <dt>${_(u"Base happiness")}</dt>
         <dd>
             ${c.pokemon.base_happiness}
             <a href="${url(controller='dex_search', action='pokemon_search', base_happiness=c.pokemon.base_happiness)}"
@@ -201,7 +209,7 @@ ${h.h1('Essentials')}
                 <img src="${h.static_uri('spline', 'icons/magnifier-small.png')}" alt="Search: " title="Search">
             </a>
         </dd>
-        <dt>Growth rate</dt>
+        <dt>${_(u"Growth rate")}</dt>
         <dd>
             ${c.pokemon.evolution_chain.growth_rate.name}
             <a href="${url(controller='dex_search', action='pokemon_search', growth_rate=c.pokemon.evolution_chain.growth_rate.max_experience)}"
@@ -211,7 +219,7 @@ ${h.h1('Essentials')}
         </dd>
     </dl>
 
-    <h2>Wild held items</h2>
+    <h2>${_(u"Wild held items")}</h2>
     <table class="dex-pokemon-held-items striped-row-groups">
     % for generation, version_dict in sorted(c.held_items.items(), \
                                              key=lambda (k, v): k.id):
@@ -239,7 +247,7 @@ ${h.h1('Essentials')}
         <td class="item">${h.pokedex.item_link(item_records[i][0])}</td>
         % else:
         <td class="rarity"></td>
-        <td class="item">nothing</td>
+        <td class="item">${_(u"nothing")}</td>
         % endif
       % endfor
     </tr>
@@ -250,22 +258,22 @@ ${h.h1('Essentials')}
 </div>
 </div>
 
-${h.h1('Evolution')}
+${h.h1(_('Evolution'))}
 <ul class="see-also">
 <li>
-    <img src="${h.static_uri('spline', 'icons/chart--arrow.png')}" alt="See also:">
+    <img src="${h.static_uri('spline', 'icons/chart--arrow.png')}" alt="${_(u"See also:")}">
     <a href="${url(controller='dex_gadgets', action='compare_pokemon', \
-        pokemon=[pokemon.full_name for pokemon in c.pokemon.evolution_chain.pokemon])}">Compare these Pokémon</a>
+        pokemon=[pokemon.full_name for pokemon in c.pokemon.evolution_chain.pokemon])}">${_(u"Compare these Pokémon")}</a>
 </li>
 </ul>
 
 <table class="dex-evolution-chain">
 <thead>
 <tr>
-    <th>Baby</th>
-    <th>Basic</th>
-    <th>Stage 1</th>
-    <th>Stage 2</th>
+    <th>${_(u"Baby")}</th>
+    <th>${_(u"Basic")}</th>
+    <th>${_(u"Stage 1")}</th>
+    <th>${_(u"Stage 2")}</th>
 </tr>
 </thead>
 <tbody>
@@ -300,7 +308,7 @@ ${h.h1('Evolution')}
         </span>
         % elif col['pokemon'].is_baby and c.pokemon.evolution_chain.baby_trigger_item:
         <span class="dex-evolution-chain-method">
-            Either parent must hold ${h.pokedex.item_link(c.pokemon.evolution_chain.baby_trigger_item, include_icon=False)}
+            ${_(u"Either parent must hold ")} ${h.pokedex.item_link(c.pokemon.evolution_chain.baby_trigger_item, include_icon=False)}
         </span>
         % endif
     </td>
@@ -325,7 +333,7 @@ ${h.h1('Evolution')}
 <p> ${c.pokemon.normal_form.form_group.description.as_html | n} </p>
 % endif
 
-${h.h1('Stats')}
+${h.h1(_('Stats'))}
 <%
     # Most people want to see the best they can get
     default_stat_level = 100
@@ -359,9 +367,9 @@ ${h.h1('Stats')}
     <tr class="header-row">
         <th><!-- stat name --></th>
         <th><!-- bar and value --></th>
-        <th><abbr title="Percentile rank">Pctile</abbr></th>
-        <th>Min IVs</th>
-        <th>Max IVs</th>
+        <th><abbr title="${_(u"Percentile rank")}">${_(u"Pctile")}</abbr></th>
+        <th>${_(u"Min IVs")}</th>
+        <th>${_(u"Max IVs")}</th>
     </tr>
 </thead>
 <tbody>
@@ -400,7 +408,7 @@ ${h.h1('Stats')}
 </tr>
 </table>
 
-${h.h1('Flavor')}
+${h.h1(_('Flavor'))}
 <ul class="see-also">
 <li> <img src="${h.static_uri('spline', 'icons/arrow-000-medium.png')}" alt="See also:"> <a href="${url.current(action='pokemon_flavor')}">Detailed flavor page covering all versions</a> </li>
 </ul>
@@ -408,13 +416,13 @@ ${h.h1('Flavor')}
 ## Only showing current generation's sprites and text
 <div class="dex-column-container">
 <div class="dex-column-2x">
-    <h2>Flavor Text</h2>
+    <h2>${_("Flavor Text")}</h2>
 	<% flavor_text = filter(lambda text: text.version.generation.id == 4,
 	                        c.pokemon.normal_form.flavor_text) %>
 	${dexlib.flavor_text_list(flavor_text, 'dex-pokemon-flavor-text')}
 </div>
 <div class="dex-column">
-    <h2>Sprites</h2>
+    <h2>${_("Sprites")}</h2>
     ${h.pokedex.pokemon_sprite(c.pokemon, prefix='black-white')}
     ${h.pokedex.pokemon_sprite(c.pokemon, prefix='black-white/shiny')}
     ${h.pokedex.pokemon_sprite(c.pokemon, prefix='black-white/back')}
@@ -433,9 +441,9 @@ ${h.h1('Flavor')}
 
 <div class="dex-column-container">
 <div class="dex-column">
-    <h2>Miscellany</h2>
+    <h2>${_("Miscellany")}</h2>
     <dl>
-        <dt>Species</dt>
+        <dt>${_("Species")}</dt>
         <dd>
             ${c.pokemon.species}
             <a href="${url(controller='dex_search', action='pokemon_search', species=c.pokemon.species)}"
@@ -444,7 +452,7 @@ ${h.h1('Flavor')}
             </a>
         </dd>
 
-        <dt>Color</dt>
+        <dt>${_("Color")}</dt>
         <dd>
             <span class="dex-color-${c.pokemon.color}"></span>
             ${c.pokemon.color}
@@ -454,7 +462,7 @@ ${h.h1('Flavor')}
             </a>
         </dd>
 
-        <dt>Cry</dt>
+        <dt>${_("Cry")}</dt>
 <%
         # Shaymin (and nothing else) has different cries for its different forms
         if c.pokemon.national_id == 492:
@@ -467,12 +475,12 @@ ${h.h1('Flavor')}
         <dd>
             <audio src="${cry_path}" controls preload="auto" class="cry">
                 <!-- Totally the best fallback -->
-                <a href="${cry_path}">Download</a>
+                <a href="${cry_path}">${_("Download")}</a>
             </audio>
         </dd>
 
         % if c.pokemon.generation.id <= 3:
-        <dt>Habitat ${h.pokedex.version_icons(u'FireRed', u'LeafGreen')}</dt>
+        <dt>${_("Habitat")} ${h.pokedex.version_icons(u'FireRed', u'LeafGreen')}</dt>
         <dd>
             ${h.pokedex.pokedex_img('chrome/habitats/%s.png' % h.pokedex.filename_from_name(c.pokemon.habitat))}
             ${c.pokemon.habitat}
@@ -483,11 +491,11 @@ ${h.h1('Flavor')}
         </dd>
         % endif
 
-        <dt>Footprint</dt>
+        <dt>${_("Footprint")}</dt>
         <dd>${h.pokedex.pokemon_sprite(c.pokemon, prefix='footprints', form=None)}</dd>
 
         % if c.pokemon.generation.id <= 4:
-        <dt>Shape ${h.pokedex.generation_icon(4)}</dt>
+        <dt>${_("Shape")} ${h.pokedex.generation_icon(4)}</dt>
         <dd>
             ${h.pokedex.pokedex_img('chrome/shapes/%d.png' % c.pokemon.shape.id, alt='', title=c.pokemon.shape.name)}
             ${c.pokemon.shape.awesome_name}
@@ -500,10 +508,10 @@ ${h.h1('Flavor')}
     </dl>
 </div>
 <div class="dex-column">
-    <h2>Height</h2>
+    <h2>${_("Height")}</h2>
     <div class="dex-size">
         <div class="dex-size-trainer">
-            ${h.pokedex.pokedex_img('chrome/trainer-male.png', alt='Trainer dude', style="height: %.2f%%" % (c.heights['trainer'] * 100))}
+            ${h.pokedex.pokedex_img('chrome/trainer-male.png', alt='${_("Trainer dude")}', style="height: %.2f%%" % (c.heights['trainer'] * 100))}
             <p class="dex-size-value">
                 <input type="text" size="6" value="${h.pokedex.format_height_imperial(c.trainer_height)}" disabled="disabled" id="dex-pokemon-height">
             </p>
@@ -519,10 +527,10 @@ ${h.h1('Flavor')}
     </div>
 </div>
 <div class="dex-column">
-    <h2>Weight</h2>
+    <h2>${_("Weight")}</h2>
     <div class="dex-size">
         <div class="dex-size-trainer">
-            ${h.pokedex.pokedex_img('chrome/trainer-female.png', alt='Trainer dudette', style="height: %.2f%%" % (c.weights['trainer'] * 100))}
+            ${h.pokedex.pokedex_img('chrome/trainer-female.png', alt='${_("Trainer dudette")}', style="height: %.2f%%" % (c.weights['trainer'] * 100))}
             <p class="dex-size-value">
                 <input type="text" size="6" value="${h.pokedex.format_weight_imperial(c.trainer_weight)}" disabled="disabled" id="dex-pokemon-weight">
             </p>
@@ -539,7 +547,7 @@ ${h.h1('Flavor')}
 </div>
 </div>
 
-${h.h1('Locations')}
+${h.h1(_('Locations'))}
 <ul class="see-also">
 <li> <img src="${h.static_uri('spline', 'icons/map--arrow.png')}" alt="See also:"> <a href="${url.current(action='pokemon_locations')}">Ridiculously detailed breakdown</a> </li>
 </ul>
@@ -574,7 +582,7 @@ ${h.h1('Locations')}
     % endfor
 </dl>
 
-${h.h1('Moves')}
+${h.h1(_('Moves'))}
 <p>${u' and '.join(t.name for t in c.pokemon.types).capitalize()} moves get STAB, and have their type highlighted in green.</p>
 % if c.better_damage_class:
 <p>${c.better_damage_class.name} moves better suit ${c.pokemon.full_name}'s higher ${u'Special Attack' if c.better_damage_class.name == u'Special' else u'Attack'}, and have their class highlighted in green.</p>
@@ -631,7 +639,7 @@ ${h.h1('Moves')}
 % endfor
 </table>
 
-${h.h1('External Links', id='links')}
+${h.h1(_('External Links'), id='links')}
 <%
     # Some sites don't believe in Unicode URLs.  Scoff, scoff.
     # And they all do it differently.  Ugh, ugh.
@@ -661,15 +669,15 @@ ${h.h1('External Links', id='links')}
 %>
 <ul class="classic-list">
 % if c.pokemon.generation.id <= 1:
-<li>${h.pokedex.generation_icon(1)} <a href="http://www.math.miami.edu/~jam/azure/pokedex/species/${"%03d" % c.pokemon.national_id}.htm">Azure Heights</a></li>
+<li>${h.pokedex.generation_icon(1)} <a href="http://www.math.miami.edu/~jam/azure/pokedex/species/${"%03d" % c.pokemon.national_id}.htm">${_("Azure Heights")}</a></li>
 % endif
-<li><a href="http://bulbapedia.bulbagarden.net/wiki/${re.sub(' ', '_', c.pokemon.name)}_%28Pok%C3%A9mon%29">Bulbapedia</a></li>
+<li><a href="http://bulbapedia.bulbagarden.net/wiki/${re.sub(' ', '_', c.pokemon.name)}_%28Pok%C3%A9mon%29">${_("Bulbapedia")}</a></li>
 % if c.pokemon.generation.id <= 2:
-<li>${h.pokedex.generation_icon(2)} <a href="http://www.pokemondungeon.com/pokedex/${ghpd_name}.shtml">Gengar and Haunter's Pokémon Dungeon</a></li>
+<li>${h.pokedex.generation_icon(2)} <a href="http://www.pokemondungeon.com/pokedex/${ghpd_name}.shtml">${_(u"Gengar and Haunter's Pokémon Dungeon")}</a></li>
 % endif
-<li><a href="http://www.legendarypokemon.net/pokedex/${lp_name}">Legendary Pokémon</a></li>
-<li><a href="http://www.psypokes.com/dex/psydex/${"%03d" % c.pokemon.national_id}">PsyPoke</a></li>
-<li><a href="http://www.serebii.net/pokedex-bw/${"%03d" % c.pokemon.national_id}.shtml">Serebii.net</a></li>
-<li><a href="http://www.smogon.com/dp/pokemon/${smogon_name}">Smogon</a></li>
+<li><a href="http://www.legendarypokemon.net/pokedex/${lp_name}">${_(u"Legendary Pokémon")}</a></li>
+<li><a href="http://www.psypokes.com/dex/psydex/${"%03d" % c.pokemon.national_id}">${_("PsyPoke")}</a></li>
+<li><a href="http://www.serebii.net/pokedex-bw/${"%03d" % c.pokemon.national_id}.shtml">${_("Serebii.net")}</a></li>
+<li><a href="http://www.smogon.com/dp/pokemon/${smogon_name}">${_("Smogon")}</a></li>
 </ul>
 </%lib:cache_content>
