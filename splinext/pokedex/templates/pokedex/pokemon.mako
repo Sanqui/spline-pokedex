@@ -123,7 +123,7 @@ ${h.h1(_('Essentials'))}
                 % endfor
             </ul>
             % if len(c.pokemon.egg_groups) > 1:
-            <a href="${url(controller='dex_search', action='pokemon_search', egg_group=[_.id for _ in c.pokemon.egg_groups])}"
+            <a href="${url(controller='dex_search', action='pokemon_search', egg_group=[group.id for group in c.pokemon.egg_groups])}"
                 class="dex-subtle-search-link">
                 <img src="${h.static_uri('spline', 'icons/magnifier-small.png')}" alt="">
             </a>
@@ -323,7 +323,7 @@ ${h.h1(_('Evolution'))}
 % if c.pokemon.normal_form.form_group:
 <h2 id="forms"> <a href="#forms" class="subtle">${c.pokemon.name} Forms</a> </h2>
 <ul class="inline">
-    % for form in [_.name for _ in c.pokemon.normal_form.form_sprites]:
+    % for form in [formsprite.name for formsprite in c.pokemon.normal_form.form_sprites]:
 <%
     link_class = 'dex-box-link'
     if form == c.pokemon.forme_name:
@@ -571,7 +571,7 @@ ${h.h1(_('Locations'))}
                 % for location_area, (conditions, combined_encounter) \
                     in sorted(area_condition_encounters.items(), \
                               key=lambda (k, v): (k.location.name, k.name)):
-                <li title="${combined_encounter.level} ${combined_encounter.rarity}% ${';'.join(_.name for _ in conditions)}">
+                <li title="${combined_encounter.level} ${combined_encounter.rarity}% ${';'.join(condition.name for condition in conditions)}">
                     <a href="${url(controller="dex", action="locations", name=location_area.location.name.lower())}${'#area:' + location_area.name if location_area.name else ''}">
                         ${location_area.location.name}${', ' + location_area.name if location_area.name else ''}
                     </a>

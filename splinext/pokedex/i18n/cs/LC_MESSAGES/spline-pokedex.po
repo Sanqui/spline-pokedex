@@ -217,7 +217,7 @@ msgstr "Kroků k vylíhnutí"
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:154
 msgid "Compatibility"
-msgstr "Kompaibilita"
+msgstr "Kompatibilita"
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:157
 msgid ""
