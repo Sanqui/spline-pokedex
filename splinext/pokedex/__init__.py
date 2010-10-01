@@ -18,6 +18,7 @@ import splinext.pokedex.db
 from splinext.pokedex import helpers as pokedex_helpers
 import spline.lib.helpers as h
 from spline.lib.plugin import PluginBase, PluginLink, Priority
+from splinext.pokedex import i18n
 
 
 def add_routes_hook(map, *args, **kwargs):
@@ -164,27 +165,28 @@ class PokedexPlugin(PluginBase):
         ]
 
     def links(self):
+        _ = unicode  # XXX
         return [
-            PluginLink(u'Pokédex', url('/dex'), children=[
-                PluginLink(u'Core pages', None, children=[
-                    PluginLink(u'Pokémon', url(controller='dex', action='pokemon_list'), children=[
-                        PluginLink(u'Awesome search', url(controller='dex_search', action='pokemon_search')),
+            PluginLink(_(u'Pokédex'), url('/dex'), children=[
+                PluginLink(_(u'Core pages'), None, children=[
+                    PluginLink(_(u'Pokémon'), url(controller='dex', action='pokemon_list'), children=[
+                        PluginLink(_(u'Awesome search'), url(controller='dex_search', action='pokemon_search')),
                     ]),
-                    PluginLink(u'Moves', url(controller='dex', action='moves_list'), children=[
-                        PluginLink(u'Awesome search', url(controller='dex_search', action='move_search')),
+                    PluginLink(_(u'Moves'), url(controller='dex', action='moves_list'), children=[
+                        PluginLink(_(u'Awesome search'), url(controller='dex_search', action='move_search')),
                     ]),
-                    PluginLink(u'Types', url(controller='dex', action='types_list')),
-                    PluginLink(u'Abilities', url(controller='dex', action='abilities_list')),
-                    PluginLink(u'Items', url(controller='dex', action='items_list')),
-                    PluginLink(u'Natures', url(controller='dex', action='natures_list')),
+                    PluginLink(_(u'Types'), url(controller='dex', action='types_list')),
+                    PluginLink(_(u'Abilities'), url(controller='dex', action='abilities_list')),
+                    PluginLink(_(u'Items'), url(controller='dex', action='items_list')),
+                    PluginLink(_(u'Natures'), url(controller='dex', action='natures_list')),
                 ]),
-                PluginLink(u'Gadgets', None, children=[
-                    PluginLink(u'Compare Pokémon', url(controller='dex_gadgets', action='compare_pokemon')),
-                    PluginLink(u'Pokéball performance', url(controller='dex_gadgets', action='capture_rate')),
-                    PluginLink(u'Stat calculator', url(controller='dex_gadgets', action='stat_calculator')),
+                PluginLink(_(u'Gadgets'), None, children=[
+                    PluginLink(_(u'Compare Pokémon'), url(controller='dex_gadgets', action='compare_pokemon')),
+                    PluginLink(_(u'Pokéball performance'), url(controller='dex_gadgets', action='capture_rate')),
+                    PluginLink(_(u'Stat calculator'), url(controller='dex_gadgets', action='stat_calculator')),
                 ]),
-                PluginLink(u'Etc.', None, children=[
-                    PluginLink(u'Downloads', url('/dex/downloads')),
+                PluginLink(_(u'Etc.'), None, children=[
+                    PluginLink(_(u'Downloads'), url('/dex/downloads')),
                 ]),
             ]),
         ]

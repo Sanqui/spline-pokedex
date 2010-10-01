@@ -24,6 +24,8 @@ ${dexlib.pokemon_page_header()}
 
 
 <%lib:cache_content>
+<% dex_translate = i18n.DexTranslator(c) %>
+<% dex_markdown = i18n.DexTranslator(c) %>
 <% _ = i18n.Translator(c) %>
 
 ${h.h1(_('Essentials'))}
@@ -49,7 +51,7 @@ ${h.h1(_('Essentials'))}
 <dl class="pokemon-abilities">
     % for ability in c.pokemon.abilities:
     <dt><a href="${url(controller='dex', action='abilities', name=ability.name.lower())}">${ability.name}</a></dt>
-    <dd class="markdown">${ability.short_effect.as_html | n}</dd>
+    <dd class="markdown">${dex_translate(ability.short_effect).as_html | n}</dd>
     % endfor
 </dl>
 
