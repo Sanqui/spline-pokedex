@@ -242,7 +242,7 @@ msgstr "Cena"
 #: splinext/pokedex/templates/pokedex/item.mako:47
 #, python-format
 msgid "%s Pokédollars"
-msgstr "%s Pokédollarů"
+msgstr "%s Pokédolarů"
 
 #: splinext/pokedex/templates/pokedex/item.mako:49
 msgid "Can't be bought or sold"
@@ -267,14 +267,13 @@ msgstr "Natural Gift"
 #. Py3Format
 #: splinext/pokedex/templates/pokedex/item.mako:78
 msgid "Inflicts regular {type} damage with {power} power"
-msgstr "Působí regulérní zranění typu {type} s {power} sílou"
+msgstr "Působí normální zranění typu {type} s {power} sílou"
 
 #: splinext/pokedex/templates/pokedex/item.mako:87
 msgid "Flavor text"
 msgstr "Popisky"
 
 #: splinext/pokedex/templates/pokedex/item.mako:92
-#, fuzzy
 msgid "Foreign names"
 msgstr "Cizí jména"
 
@@ -321,7 +320,7 @@ msgstr "%s/%s hodin"
 
 #: splinext/pokedex/templates/pokedex/item.mako:126
 msgid "Soil drying rate"
-msgstr "Poměr vyschnutí půdy"
+msgstr "Rychlost schnutí půdy"
 
 #: splinext/pokedex/templates/pokedex/item.mako:131
 #, fuzzy
