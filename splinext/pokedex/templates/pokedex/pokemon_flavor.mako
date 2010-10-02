@@ -1,10 +1,12 @@
 <%inherit file="/base.mako"/>
 <%namespace name="lib" file="lib.mako"/>
 <%! import re %>\
+<%! from splinext.pokedex import i18n %>\
 
 <%def name="flavor_name()">\
+<% _ = i18n.Translator(c) %>\
 % if c.pokemon.name == 'Unown' and c.form:
-Unown ${c.form.capitalize()}\
+${_("Unown %s") % c.form.capitalize()}\
 % elif c.form:
 ${c.form.title()} ${c.pokemon.name}\
 % else:
@@ -12,43 +14,47 @@ ${c.pokemon.name}\
 % endif
 </%def>
 
-<%def name="title()">${flavor_name()} flavor - Pokémon #${c.pokemon.national_id}</%def>
+<%def name="title()"><% _ = i18n.Translator(c) %>${_(u"{flavor_name} flavor - Pokémon {poke}").format(flavor_name=flavor_name(), poke=c.pokemon.national_id)}</%def>
 
 <%def name="title_in_page()">
+<% _ = i18n.Translator(c) %>
 <ul id="breadcrumbs">
-    <li><a href="${url('/dex')}">Pokédex</a></li>
-    <li><a href="${url(controller='dex', action='pokemon_list')}">Pokémon</a></li>
+    <li><a href="${url('/dex')}">${_(u"Pokédex")}</a></li>
+    <li><a href="${url(controller='dex', action='pokemon_list')}">${_(u"Pokémon")}</a></li>
     <li>${h.pokedex.pokemon_link(c.pokemon)}</li>
-    <li>${flavor_name()} flavor</li>
+    <li>${_("%s flavor") % flavor_name()}</li>
 </ul>
 </%def>
 
+<% dex_translate = i18n.DexTranslator(c) %>
+<% _ = i18n.Translator(c) %>
+
 ${lib.pokemon_page_header()}
-${h.h1('Essentials')}
+${h.h1(_('Essentials'))}
 <div class="dex-column-container">
 <div class="dex-column">
-    <h2>Miscellany</h2>
+    <h2>${_("Miscellany")}</h2>
     <dl>
-        <dt>Species</dt>
+        <dt>${_("Species")}</dt>
         <dd>
             ${c.pokemon.species}
             <a href="${url(controller='dex_search', action='pokemon_search', species=c.pokemon.species)}"
                 class="dex-subtle-search-link">
-                <img src="${h.static_uri('spline', 'icons/magnifier-small.png')}" alt="Search: " title="Search">
+                <img src="${h.static_uri('spline', 'icons/magnifier-small.png')}" alt="${_("Search:")} " title="${_("Search")}">
             </a>
         </dd>
 
-        <dt>Color</dt>
+        <dt>${_("Color")}</dt>
         <dd>
             <span class="dex-color-${c.pokemon.color}"></span>
             ${c.pokemon.color}
             <a href="${url(controller='dex_search', action='pokemon_search', color=c.pokemon.color)}"
                 class="dex-subtle-search-link">
-                <img src="${h.static_uri('spline', 'icons/magnifier-small.png')}" alt="Search: " title="Search">
+                <img src="${h.static_uri('spline', 'icons/magnifier-small.png')}" alt="${_("Search: ")}" title="${_("Search")}">
             </a>
         </dd>
 
-        <dt>Cry</dt>
+        <dt>${_("Cry")}</dt>
 <%
         # Shaymin (and nothing else) has different cries for its different forms
         if c.pokemon.national_id == 492:
@@ -61,33 +67,33 @@ ${h.h1('Essentials')}
         <dd>
             <audio src="${cry_path}" controls preload="auto" class="cry">
                 <!-- Totally the best fallback -->
-                <a href="${cry_path}">Download</a>
+                <a href="${cry_path}">${_("Download")}</a>
             </audio>
         </dd>
 
         % if c.pokemon.generation.id <= 3:
-        <dt>Habitat ${h.pokedex.version_icons(u'FireRed', u'LeafGreen')}</dt>
+        <dt>${_("Habitat")} ${h.pokedex.version_icons(u'FireRed', u'LeafGreen')}</dt>
         <dd>
             ${h.pokedex.pokedex_img('chrome/habitats/%s.png' % h.pokedex.filename_from_name(c.pokemon.habitat))}
             ${c.pokemon.habitat}
             <a href="${url(controller='dex_search', action='pokemon_search', habitat=c.pokemon.habitat)}"
                 class="dex-subtle-search-link">
-                <img src="${h.static_uri('spline', 'icons/magnifier-small.png')}" alt="Search: " title="Search">
+                <img src="${h.static_uri('spline', 'icons/magnifier-small.png')}" alt="${_("Search:")} " title="${_("Search")}">
             </a>
         </dd>
         % endif
 
-        <dt>Footprint</dt>
+        <dt>${_("Footprint")}</dt>
         <dd>${h.pokedex.pokemon_sprite(c.pokemon, prefix='footprints', form=None)}</dd>
 
         % if c.pokemon.generation.id <= 4:
-        <dt>Shape ${h.pokedex.generation_icon(4)}</dt>
+        <dt>${_("Shape")} ${h.pokedex.generation_icon(4)}</dt>
         <dd>
             ${h.pokedex.pokedex_img('chrome/shapes/%d.png' % c.pokemon.shape.id, alt='', title=c.pokemon.shape.name)}
             ${c.pokemon.shape.awesome_name}
             <a href="${url(controller='dex_search', action='pokemon_search', shape=c.pokemon.shape.name.lower())}"
                 class="dex-subtle-search-link">
-                <img src="${h.static_uri('spline', 'icons/magnifier-small.png')}" alt="Search: " title="Search">
+                <img src="${h.static_uri('spline', 'icons/magnifier-small.png')}" alt="${_("Search:")} " title="${_("Search")}">
             </a>
         </dd>
         % endif
@@ -95,7 +101,7 @@ ${h.h1('Essentials')}
 </div>
 
 <div class="dex-column">
-    <h2>Height</h2>
+    <h2>${_("Height")}</h2>
     <div class="dex-size">
         <div class="dex-size-trainer">
             ${h.pokedex.pokedex_img('chrome/trainer-male.png', alt='Trainer dude', style="height: %.2f%%" % (c.heights['trainer'] * 100))}
@@ -115,7 +121,7 @@ ${h.h1('Essentials')}
 </div>
 
 <div class="dex-column">
-    <h2>Weight</h2>
+    <h2>${_("Weight")}</h2>
     <div class="dex-size">
         <div class="dex-size-trainer">
             ${h.pokedex.pokedex_img('chrome/trainer-female.png', alt='Trainer dudette', style="height: %.2f%%" % (c.weights['trainer'] * 100))}
@@ -135,12 +141,12 @@ ${h.h1('Essentials')}
 </div>
 </div>
 
-${h.h1(u'Pokédex Description', id='pokedex')}
+${h.h1(_(u'Pokédex Description'), id='pokedex')}
 ${lib.flavor_text_list(c.pokemon.flavor_text, 'dex-pokemon-flavor-text')}
 
-${h.h1('Main Game Portraits', id='main-sprites')}
+${h.h1(_('Main Game Portraits'), id='main-sprites')}
 % if c.forms:
-<h3>Forms</h3>
+<h3>${_("Forms")}</h3>
 <ul class="inline">
 % for form in c.forms:
     <li>${h.pokedex.pokemon_link(
@@ -151,11 +157,11 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
     )}</li>
 % endfor
 </ul>
-<p> ${c.pokemon.normal_form.form_group.description.as_html | n} </p>
+<p> ${dex_translate(c.pokemon.normal_form.form_group.description).as_html | n} </p>
 % endif
 
 % if c.introduced_in.id <= 2:
-<h2 id="main-sprites:gen-i"><a href="#main-sprites:gen-i" class="subtle">${h.pokedex.generation_icon(1)} Red &amp; Green, Red &amp; Blue, Yellow</a></h2>
+<h2 id="main-sprites:gen-i"><a href="#main-sprites:gen-i" class="subtle">${h.pokedex.generation_icon(1)} ${_("Red & Green, Red & Blue, Yellow")}</a></h2>
 <table class="dex-pokemon-flavor-sprites">
 <colgroup span="1"></colgroup> <!-- row headers -->
 <colgroup span="2"></colgroup> <!-- 赤い/緑 -->
@@ -171,7 +177,7 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
 </thead>
 <tbody>
     <tr>
-        <th class="vertical-text">GB</th>
+        <th class="vertical-text">${_("GB")}</th>
         <td>${h.pokedex.pokemon_sprite(c.pokemon, prefix='red-green/gray', form=c.form)}</td>
         <td class="dex-pokemon-flavor-rby-back">${h.pokedex.pokemon_sprite(c.pokemon, prefix='red-green/back/gray', form=c.form)}</td>
 
@@ -182,7 +188,7 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
         <td class="dex-pokemon-flavor-rby-back">${h.pokedex.pokemon_sprite(c.pokemon, prefix='yellow/back/gray', form=c.form)}</td>
     </tr>
     <tr>
-        <th class="vertical-text">SGB</th>
+        <th class="vertical-text">${_("SGB")}</th>
         <td>${h.pokedex.pokemon_sprite(c.pokemon, prefix='red-green', form=c.form)}</td>
         <td class="dex-pokemon-flavor-rby-back">${h.pokedex.pokemon_sprite(c.pokemon, prefix='red-green/back', form=c.form)}</td>
 
@@ -193,7 +199,7 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
         <td class="dex-pokemon-flavor-rby-back">${h.pokedex.pokemon_sprite(c.pokemon, prefix='yellow/back', form=c.form)}</td>
     </tr>
     <tr>
-        <th class="vertical-text">GBC</th>
+        <th class="vertical-text">${_("GBC")}</th>
         <td colspan="2" class="dex-pokemon-flavor-no-sprite">—</td>
 
         <td colspan="2" class="dex-pokemon-flavor-no-sprite">—</td>
@@ -206,7 +212,7 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
 % endif
 
 % if c.introduced_in.id <= 4:
-<h2 id="main-sprites:gen-ii"><a href="#main-sprites:gen-ii" class="subtle">${h.pokedex.generation_icon(2)} Gold &amp; Silver, Crystal</a></h2>
+<h2 id="main-sprites:gen-ii"><a href="#main-sprites:gen-ii" class="subtle">${h.pokedex.generation_icon(2)} ${_("Gold & Silver, Crystal")}</a></h2>
 <table class="dex-pokemon-flavor-sprites">
 <colgroup span="1"></colgroup> <!-- row headers -->
 <colgroup span="2"></colgroup> <!-- Gold -->
@@ -222,7 +228,7 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
 </thead>
 <tbody>
     <tr>
-        <th class="vertical-text">Normal</th>
+        <th class="vertical-text">${_("Normal")}</th>
         <td>${h.pokedex.pokemon_sprite(c.pokemon, prefix='gold', form=c.form)}</td>
         <td>${h.pokedex.pokemon_sprite(c.pokemon, prefix='gold/back', form=c.form)}</td>
 
@@ -236,7 +242,7 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
         <td>${h.pokedex.pokemon_sprite(c.pokemon, prefix='crystal/back', form=c.form)}</td>
     </tr>
     <tr>
-        <th class="vertical-text">Shiny</th>
+        <th class="vertical-text">${_("Shiny")}</th>
         <td>${h.pokedex.pokemon_sprite(c.pokemon, prefix='gold/shiny', form=c.form)}</td>
         <td>${h.pokedex.pokemon_sprite(c.pokemon, prefix='gold/back/shiny', form=c.form)}</td>
 
@@ -259,7 +265,7 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
 <% show_frlg = (c.pokemon.generation_id == 1
                 or c.pokemon.name == u'Teddiursa'
                 or (c.pokemon.name == u'Deoxys' and c.form in (u'attack', u'defense', u'normal'))) %>\
-<h2 id="main-sprites:gen-iii"><a href="#main-sprites:gen-iii" class="subtle">${h.pokedex.generation_icon(3)} Ruby &amp; Sapphire, Emerald, FireRed &amp; LeafGreen</a></h2>
+<h2 id="main-sprites:gen-iii"><a href="#main-sprites:gen-iii" class="subtle">${h.pokedex.generation_icon(3)} ${_("Ruby & Sapphire, Emerald, FireRed & LeafGreen")}</a></h2>
 ## Deoxys is a bit of a mess.
 ## Normal exists everywhere.  Speed only in Emerald; Attack only in LG; Defense only in FR.
 <table class="dex-pokemon-flavor-sprites">
@@ -289,7 +295,7 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
 </thead>
 <tbody>
     <tr>
-        <th class="vertical-text">Normal</th>
+        <th class="vertical-text">${_("Normal")}</th>
     % if show_rusa:
         <td>${h.pokedex.pokemon_sprite(c.pokemon, prefix='ruby-sapphire', form=c.form)}</td>
         <td>${h.pokedex.pokemon_sprite(c.pokemon, prefix='ruby-sapphire/back', form=c.form)}</td>
@@ -312,7 +318,7 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
     % endif
     </tr>
     <tr>
-        <th class="vertical-text">Shiny</th>
+        <th class="vertical-text">${_("Shiny")}</th>
     % if show_rusa:
         <td>${h.pokedex.pokemon_sprite(c.pokemon, prefix='ruby-sapphire/shiny', form=c.form)}</td>
         <td>${h.pokedex.pokemon_sprite(c.pokemon, prefix='ruby-sapphire/back/shiny', form=c.form)}</td>
@@ -338,7 +344,7 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
 % endif
 
 % if c.pokemon.generation_id <= 4:
-<h2 id="main-sprites:gen-iv"><a href="#main-sprites:gen-iv" class="subtle">${h.pokedex.generation_icon(4)} Diamond &amp; Pearl, Platinum, HeartGold &amp; SoulSilver</a></h2>
+<h2 id="main-sprites:gen-iv"><a href="#main-sprites:gen-iv" class="subtle">${h.pokedex.generation_icon(4)} ${_("Diamond & Pearl, Platinum, HeartGold & SoulSilver")}</a></h2>
 <table class="dex-pokemon-flavor-sprites">
 <colgroup span="1"></colgroup> <!-- row headers -->
 % if c.introduced_in.id <= 8:
@@ -366,9 +372,9 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
 <tbody>
     <tr>
         <th class="vertical-text">
-            Normal
+            ${_("Normal")}
             % if c.pokemon.has_gen4_fem_sprite:
-            <br/> (male)
+            <br/> ${_("(male)")}
             % endif
         </th>
         % if c.introduced_in.id <= 8:
@@ -401,9 +407,9 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
     </tr>
     <tr>
         <th class="vertical-text">
-            Shiny
+            ${_("Shiny")}
             % if c.pokemon.has_gen4_fem_sprite:
-            <br/> (male)
+            <br/> ${_("(male)")}
             % endif
         </th>
         % if c.introduced_in.id <= 8:
@@ -438,7 +444,7 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
 % if c.pokemon.has_gen4_fem_sprite:
 <tbody>
     <tr>
-        <th class="vertical-text">Normal<br/>(female)</th>
+        <th class="vertical-text">${_("Normal")}<br/>${_("(female)")}</th>
         % if c.introduced_in.id <= 8:
         <td>
             ${h.pokedex.pokemon_sprite(c.pokemon, prefix='diamond-pearl/female', form=c.form)}
@@ -480,7 +486,7 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
         % endif
     </tr>
     <tr>
-        <th class="vertical-text">Shiny<br/>(female)</th>
+        <th class="vertical-text">${_("Shiny")}<br/>${_("(female)")}</th>
         % if c.introduced_in.id <= 8:
         <td>
             ${h.pokedex.pokemon_sprite(c.pokemon, prefix='diamond-pearl/shiny/female', form=c.form)}
@@ -527,7 +533,7 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
 % endif
 
 % if c.pokemon.generation_id <= 5:
-<h2 id="main-sprites:gen-v"><a href="#main-sprites:gen-v" class="subtle">${h.pokedex.generation_icon(5)} Black &amp; White</a></h2>
+<h2 id="main-sprites:gen-v"><a href="#main-sprites:gen-v" class="subtle">${h.pokedex.generation_icon(5)} ${_("Black & White")}</a></h2>
 <table class="dex-pokemon-flavor-sprites">
 <colgroup span="1"></colgroup> <!-- row headers -->
 % if c.introduced_in.id <= 11:
@@ -542,9 +548,9 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
 <tbody>
     <tr>
         <th class="vertical-text">
-            Normal
+            ${_("Normal")}
             % if c.pokemon.has_gen4_fem_sprite:
-            <br/> (male)
+            <br/> ${_("(male)")}
             % endif
         </th>
         % if c.introduced_in.id <= 11:
@@ -554,9 +560,9 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
     </tr>
     <tr>
         <th class="vertical-text">
-            Shiny
+            ${_("Shiny")}
             % if c.pokemon.has_gen4_fem_sprite:
-            <br/> (male)
+            <br/> ${_("(male)")}
             % endif
         </th>
         % if c.introduced_in.id <= 11:
@@ -568,7 +574,7 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
 % if c.pokemon.has_gen4_fem_sprite:
 <tbody>
     <tr>
-        <th class="vertical-text">Normal <br/> (female)</th>
+        <th class="vertical-text">${_("Normal")} <br/> ${_("(female)")}</th>
         % if c.introduced_in.id <= 11:
         <td>${h.pokedex.pokemon_sprite(c.pokemon, prefix='black-white/female', form=c.form)}</td>
         % if c.pokemon.has_gen4_fem_back_sprite:
@@ -579,7 +585,7 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
         % endif
     </tr>
     <tr>
-        <th class="vertical-text">Shiny <br/> (female)</th>
+        <th class="vertical-text">${_("Shiny")} <br/> ${_("(female)")}</th>
         % if c.introduced_in.id <= 11:
         <td>${h.pokedex.pokemon_sprite(c.pokemon, prefix='black-white/shiny/female', form=c.form)}</td>
         % if c.pokemon.has_gen4_fem_back_sprite:
@@ -597,10 +603,10 @@ ${h.h1('Main Game Portraits', id='main-sprites')}
 
 ## Overworld sprites can't exist for alternate formes that are in-battle only
 % if c.appears_in_overworld:
-${h.h1('Miscellaneous Game Art', id='misc-sprites')}
+${h.h1(_('Miscellaneous Game Art'), id='misc-sprites')}
 
 % if c.pokemon.generation_id <= 4:
-<h2> ${h.pokedex.version_icons(u'HeartGold', u'SoulSilver')} HeartGold &amp; SoulSilver Overworld </h2>
+<h2> ${h.pokedex.version_icons(u'HeartGold', u'SoulSilver')} ${_("HeartGold &a SoulSilver Overworld")} </h2>
 <table class="dex-pokemon-flavor-sprites">
 % if c.pokemon.has_gen4_fem_sprite:
 <colgroup span="1"></colgroup> <!-- row headers -->
@@ -614,10 +620,10 @@ ${h.h1('Miscellaneous Game Art', id='misc-sprites')}
         % if c.pokemon.has_gen4_fem_sprite:
         <th></th>
         % endif
-        <th>Left</th>
-        <th>Down</th>
-        <th>Up</th>
-        <th>Right</th>
+        <th>${_("Left", context='overworld sprite')}</th>
+        <th>${_("Down", context='overworld sprite')}</th>
+        <th>${_("Up", context='overworld sprite')}</th>
+        <th>${_("Right", context='overworld sprite')}</th>
     </tr>
 </thead>
 <tbody>
@@ -664,7 +670,7 @@ ${h.h1('Miscellaneous Game Art', id='misc-sprites')}
 % if c.pokemon.has_gen4_fem_sprite:
 <tbody>
     <tr>
-        <th class="vertical-text" rowspan="2">Female</th>
+        <th class="vertical-text" rowspan="2">${_("Female")}</th>
         <td>
             ${h.pokedex.pokemon_sprite(c.pokemon, prefix='overworld/female/left', form=c.form)}
             ${h.pokedex.pokemon_sprite(c.pokemon, prefix='overworld/female/left/frame2', form=c.form)}
@@ -709,9 +715,9 @@ ${h.h1('Miscellaneous Game Art', id='misc-sprites')}
 
 
 
-${h.h1('Other Images', id='other')}
+${h.h1(_('Other Images'), id='other')}
 
-<h2>Official artwork by Ken Sugimori</h2>
+<h2>${_("Official artwork by Ken Sugimori")}</h2>
 ## Shenanigans!  Most forms have official art, but a couple do not.
 ## To resolve this:
 ## 1. "Default" forms are just (number).png and are guaranteed to exist.
