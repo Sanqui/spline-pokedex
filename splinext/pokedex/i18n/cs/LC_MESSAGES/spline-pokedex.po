@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: spline 0.1\n"
 "Report-Msgid-Bugs-To: encukou@gmail.com\n"
 "POT-Creation-Date: 2010-09-30 23:08+0300\n"
-"PO-Revision-Date: 2010-10-02 00:59+0200\n"
+"PO-Revision-Date: 2010-10-02 11:51+0200\n"
 "Last-Translator: Petr 'En-Cu-Kou' Viktorin <encukou@gmail.com>\n"
 "Language-Team: cs <encukou@gmail.com>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
@@ -111,12 +111,12 @@ msgstr "Efekt"
 #: splinext/pokedex/templates/pokedex/ability.mako:55
 #: splinext/pokedex/templates/pokedex/pokemon.mako:413
 msgid "Flavor"
-msgstr ""
+msgstr "Omáčka okolo"
 
 #: splinext/pokedex/templates/pokedex/ability.mako:58
 #: splinext/pokedex/templates/pokedex/pokemon.mako:421
 msgid "Flavor Text"
-msgstr ""
+msgstr "Popisky"
 
 #: splinext/pokedex/templates/pokedex/ability.mako:63
 msgid "Foreign Names"
@@ -124,7 +124,7 @@ msgstr "Cizí jména"
 
 #: splinext/pokedex/templates/pokedex/ability.mako:79
 msgid "plural|Pokémon"
-msgstr ""
+msgstr "Pokémoni"
 
 #: splinext/pokedex/templates/pokedex/ability.mako:97
 #: splinext/pokedex/templates/pokedex/pokemon.mako:644
@@ -152,17 +152,16 @@ msgid "Smogon"
 msgstr "Smogon"
 
 #: splinext/pokedex/templates/pokedex/ability_list.mako:17
-#, fuzzy
 msgid "Ability list"
-msgstr "Schopnosti"
+msgstr "Seznam schopností"
 
 #: splinext/pokedex/templates/pokedex/ability_list.mako:25
 msgid "#"
-msgstr ""
+msgstr "#"
 
 #: splinext/pokedex/templates/pokedex/ability_list.mako:26
 msgid "Gen"
-msgstr ""
+msgstr "Gen."
 
 #: splinext/pokedex/templates/pokedex/ability_list.mako:27
 #, fuzzy
@@ -184,6 +183,7 @@ msgid "Damage Taken"
 msgstr "Utržené zranění"
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:74
+#, fuzzy
 msgid "Pokédex Numbers"
 msgstr "Pokédexová čísla"
 
@@ -209,7 +209,7 @@ msgstr "Skupiny pro křížení"
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:133
 msgid "Hatch counter"
-msgstr ""
+msgstr "Počítadlo líhnutí"
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:142
 msgid "Steps to hatch"
@@ -223,7 +223,7 @@ msgstr "Kompatibilita"
 msgid ""
 "Ditto can breed with any other breedable Pokémon, but can never produce a"
 " Ditto egg."
-msgstr ""
+msgstr "Ditto lze křížit s každým křížitelným Pokémonem kromě Ditta."
 
 #. Py3Format
 #: splinext/pokedex/templates/pokedex/pokemon.mako:160
@@ -244,7 +244,7 @@ msgstr "EXP na úrovni"
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:188
 msgid "Effort points"
-msgstr ""
+msgstr "\"Effort body\""
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:198
 msgid "Capture rate"
@@ -260,7 +260,7 @@ msgstr "Růst"
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:224
 msgid "Wild held items"
-msgstr ""
+msgstr "Držené věci u výskytů"
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:252
 msgid "nothing"
@@ -276,7 +276,7 @@ msgstr "Viz"
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:268
 msgid "Compare these Pokémon"
-msgstr ""
+msgstr "Porovnat tyto Pokémony"
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:275
 msgid "Baby"
@@ -296,7 +296,7 @@ msgstr "2. vývin"
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:313
 msgid "Either parent must hold "
-msgstr ""
+msgstr "Jeden z rodičů musí držet "
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:338
 msgid "Stats"
@@ -304,7 +304,7 @@ msgstr "Staty"
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:372
 msgid "Percentile rank"
-msgstr "Percentil"
+msgstr "Percentilní hodnocení"
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:372
 msgid "Pctile"
@@ -320,7 +320,7 @@ msgstr "Max. IV"
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:427
 msgid "Sprites"
-msgstr ""
+msgstr "Sprity"
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:446
 msgid "Miscellany"
@@ -348,7 +348,7 @@ msgstr "Prostředí"
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:496
 msgid "Footprint"
-msgstr ""
+msgstr "Tlapa"
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:500
 msgid "Shape"
@@ -364,7 +364,7 @@ msgstr "Hmotnost"
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:552
 msgid "Locations"
-msgstr ""
+msgstr "Umístění"
 
 #: splinext/pokedex/templates/pokedex/pokemon.mako:674
 msgid "Azure Heights"
