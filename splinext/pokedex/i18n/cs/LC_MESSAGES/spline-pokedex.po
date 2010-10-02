@@ -179,99 +179,99 @@ msgstr "Jména"
 
 #: splinext/pokedex/templates/pokedex/cheat_unlocked.mako:6
 msgid "idspispopd"
-msgstr ""
+msgstr "idspisopod"
 
 #: splinext/pokedex/templates/pokedex/cheat_unlocked.mako:7
 msgid "iddqd"
-msgstr ""
+msgstr "iddqd"
 
 #: splinext/pokedex/templates/pokedex/cheat_unlocked.mako:8
 msgid "cass"
-msgstr ""
+msgstr "cass"
 
 #: splinext/pokedex/templates/pokedex/cheat_unlocked.mako:9
 msgid "uuddlrlrba"
-msgstr ""
+msgstr "uuddlrlrba"
 
 #: splinext/pokedex/templates/pokedex/cheat_unlocked.mako:10
 msgid "hold down+b"
-msgstr ""
+msgstr "držet dolů+b"
 
 #: splinext/pokedex/templates/pokedex/cheat_unlocked.mako:11
 msgid "talk to oak 250 times"
-msgstr ""
+msgstr "promluvit si s oakem 250krát"
 
 #: splinext/pokedex/templates/pokedex/cheat_unlocked.mako:12
 msgid "its a secret to everyone"
-msgstr ""
+msgstr "its a secret to everyone"
 
 #: splinext/pokedex/templates/pokedex/cheat_unlocked.mako:20
 #: splinext/pokedex/templates/pokedex/cheat_unlocked.mako:21
 msgid "YEAH"
-msgstr ""
+msgstr "JO!"
 
 #: splinext/pokedex/templates/pokedex/cheat_unlocked.mako:22
 msgid "Success"
-msgstr ""
+msgstr "Úspěch"
 
 #: splinext/pokedex/templates/pokedex/cheat_unlocked.mako:23
 msgid "Cheat Unlocked"
-msgstr ""
+msgstr "Cheat odemknut"
 
 #. Py2Format
 #: splinext/pokedex/templates/pokedex/item.mako:5
 #, fuzzy, python-format
 msgid "%s - Items"
-msgstr "%s - Schopnosti"
+msgstr "%s - Věci"
 
 #. Py2Format
 #: splinext/pokedex/templates/pokedex/item.mako:12
 #, python-format
 msgid "%s pocket"
-msgstr ""
+msgstr "kapsa pro %s"
 
 #: splinext/pokedex/templates/pokedex/item.mako:38
 msgid "pocket"
-msgstr ""
+msgstr "kapsa"
 
 #: splinext/pokedex/templates/pokedex/item.mako:44
 msgid "Cost"
-msgstr ""
+msgstr "Cena"
 
 #. Py2Format
 #: splinext/pokedex/templates/pokedex/item.mako:47
 #, python-format
 msgid "%s Pokédollars"
-msgstr ""
+msgstr "%s Pokédollarů"
 
 #: splinext/pokedex/templates/pokedex/item.mako:49
 msgid "Can't be bought or sold"
-msgstr ""
+msgstr "Nelze koupit či prodat"
 
 #: splinext/pokedex/templates/pokedex/item.mako:52
 msgid "Flags"
-msgstr ""
+msgstr "Štítky"
 
 #: splinext/pokedex/templates/pokedex/item.mako:70
 msgid "Special move effects"
-msgstr ""
+msgstr "Zvláštní efekt pro útoky"
 
 #: splinext/pokedex/templates/pokedex/item.mako:73
 msgid "Fling"
-msgstr ""
+msgstr "Fling"
 
 #: splinext/pokedex/templates/pokedex/item.mako:77
 msgid "Natural Gift"
-msgstr ""
+msgstr "Natural Gift"
 
 #. Py3Format
 #: splinext/pokedex/templates/pokedex/item.mako:78
 msgid "Inflicts regular {type} damage with {power} power"
-msgstr ""
+msgstr "Působí regulérní zranění typu {type} s {power} sílou"
 
 #: splinext/pokedex/templates/pokedex/item.mako:87
 msgid "Flavor text"
-msgstr ""
+msgstr "Popisky"
 
 #: splinext/pokedex/templates/pokedex/item.mako:92
 #, fuzzy
@@ -280,83 +280,83 @@ msgstr "Cizí jména"
 
 #: splinext/pokedex/templates/pokedex/item.mako:109
 msgid "Berry tag"
-msgstr ""
+msgstr "Berry tag"
 
 #: splinext/pokedex/templates/pokedex/item.mako:112
 msgid "Growth"
-msgstr ""
+msgstr "Růst"
 
 #: splinext/pokedex/templates/pokedex/item.mako:114
 msgid "Maximum harvest"
-msgstr ""
+msgstr "Nejvyšší sklizeň"
 
 #. Py2Format
 #: splinext/pokedex/templates/pokedex/item.mako:115
 #, python-format
 msgid "%s berries"
-msgstr ""
+msgstr "%s bobule"
 
 #: splinext/pokedex/templates/pokedex/item.mako:116
 msgid "Time to grow"
-msgstr ""
+msgstr "Čas k růstu"
 
 #. Py2Format
 #: splinext/pokedex/templates/pokedex/item.mako:118
 #, python-format
 msgid "%s hours per stage"
-msgstr ""
+msgstr "%s hodin za stupeň"
 
 #. Py2Format
 #: splinext/pokedex/templates/pokedex/item.mako:119
 #, python-format
 msgid "%s hours total"
-msgstr ""
+msgstr "%s hodin celkem"
 
 #. Py2Format
 #: splinext/pokedex/templates/pokedex/item.mako:122
 #: splinext/pokedex/templates/pokedex/item.mako:124
 #, python-format
 msgid "%s/%s hours"
-msgstr ""
+msgstr "%s/%s hodin"
 
 #: splinext/pokedex/templates/pokedex/item.mako:126
 msgid "Soil drying rate"
-msgstr ""
+msgstr "Poměr vyschnutí půdy"
 
 #: splinext/pokedex/templates/pokedex/item.mako:131
 #, fuzzy
 msgid "Taste"
-msgstr "Staty"
+msgstr "Chuť"
 
 #. Py2Format
 #: splinext/pokedex/templates/pokedex/item.mako:138
 #, python-format
 msgid "(raises %s)"
-msgstr ""
+msgstr "(zvyšuje %s)"
 
 #: splinext/pokedex/templates/pokedex/item.mako:140
 msgid "—"
-msgstr ""
+msgstr "—"
 
 #: splinext/pokedex/templates/pokedex/item.mako:144
 msgid "Smoothness"
-msgstr ""
+msgstr "Hladkost"
 
 #: splinext/pokedex/templates/pokedex/item.mako:151
 msgid "Size"
-msgstr ""
+msgstr "Velikost"
 
 #: splinext/pokedex/templates/pokedex/item.mako:153
 msgid "Firmness"
-msgstr ""
+msgstr "Tuhost"
 
 #: splinext/pokedex/templates/pokedex/item.mako:161
 msgid "Held by wild Pokémon"
-msgstr ""
+msgstr "Drženo divokými Pokémony"
 
 #: splinext/pokedex/templates/pokedex/item_list.mako:19
 msgid "Pick your pocket:"
-msgstr ""
+msgstr "Vyber si kapsu:"
 
 #: splinext/pokedex/templates/pokedex/cheat_unlocked.mako:6
 msgid "idspispopd"
