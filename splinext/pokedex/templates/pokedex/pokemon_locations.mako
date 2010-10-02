@@ -1,21 +1,27 @@
 <%inherit file="/base.mako"/>
 <%namespace name="lib" file="/lib.mako"/>
 <%namespace name="dexlib" file="lib.mako"/>
+<%! from splinext.pokedex import i18n %>\
 
-<%def name="title()">${c.pokemon.full_name} locations - Pokémon #${c.pokemon.national_id}</%def>
+<%def name="title()"><% _ = i18n.Translator(c) %>${_(u"{pkmn} locations - Pokémon #{id}").format(pkmn=c.pokemon.full_name, id=c.pokemon.national_id)}</%def>
 
 <%def name="title_in_page()">
+<% _ = i18n.Translator(c) %>
 <ul id="breadcrumbs">
-    <li><a href="${url('/dex')}">Pokédex</a></li>
-    <li><a href="${url(controller='dex', action='pokemon_list')}">Pokémon</a></li>
+    <li><a href="${url('/dex')}">${_(u"Pokédex")}</a></li>
+    <li><a href="${url(controller='dex', action='pokemon_list')}">${_(u"Pokémon")}</a></li>
     <li>${h.pokedex.pokemon_link(c.pokemon, content=c.pokemon.full_name)}</li>
-    <li>${c.pokemon.full_name} locations</li>
+    <li>${_(u"%s locations") % c.pokemon.full_name}</li>
 </ul>
 </%def>
 
 ${dexlib.pokemon_page_header()}
 
 <%lib:cache_content>
+
+<% dex_translate = i18n.DexTranslator(c) %>
+<% _ = i18n.Translator(c) %>
+
 ## Sort regions by the generation that introduced them
 % for region, terrain_area_version_condition_encounters \
    in sorted( c.grouped_encounters.items(), key=lambda (k, v): k.generation.id):
