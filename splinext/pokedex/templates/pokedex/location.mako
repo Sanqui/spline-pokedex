@@ -1,15 +1,20 @@
 <%inherit file="/base.mako"/>
 <%namespace name="lib" file="lib.mako"/>
+<%! from splinext.pokedex import i18n %>\
 
-<%def name="title()">${c.location_name} - Locations</%def>
+<%def name="title()"><% _ = i18n.Translator(c) %>${_("%s - Locations") % c.location_name}</%def>
 
 <%def name="title_in_page()">
+<% _ = i18n.Translator(c) %>
 <ul id="breadcrumbs">
-    <li><a href="${url('/dex')}">Pokédex</a></li>
-    <li>Locations</li>
+    <li><a href="${url('/dex')}">${_(u'Pokédex')}</a></li>
+    <li>${_(u'Locations')}</li>
     <li>${c.location_name}</li>
 </ul>
 </%def>
+
+<% dex_translate = i18n.DexTranslator(c) %>
+<% _ = i18n.Translator(c) %>
 
 <h1>${c.location_name}</h1>
 

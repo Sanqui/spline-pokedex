@@ -25,7 +25,6 @@ ${dexlib.pokemon_page_header()}
 
 <%lib:cache_content>
 <% dex_translate = i18n.DexTranslator(c) %>
-<% dex_markdown = i18n.DexTranslator(c) %>
 <% _ = i18n.Translator(c) %>
 
 ${h.h1(_('Essentials'))}
