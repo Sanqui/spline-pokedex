@@ -353,14 +353,14 @@ ${h.h1(_('Stats'))}
         <th><!-- stat name --></th>
         <th><!-- bar and value --></th>
         <th><!-- percentile --></th>
-        <th><label for="dex-pokemon-stats-level">Level</label></th>
+        <th><label for="dex-pokemon-stats-level">${_("Level")}</label></th>
         <th><input type="text" size="3" value="${default_stat_level}" disabled="disabled" id="dex-pokemon-stats-level"></th>
     </tr>
     <tr>
         <th><!-- stat name --></th>
         <th><!-- bar and value --></th>
         <th><!-- percentile --></th>
-        <th><label for="dex-pokemon-stats-iv">Effort</label></th>
+        <th><label for="dex-pokemon-stats-iv">${_("Effort")}</label></th>
         <th><input type="text" size="3" value="${default_stat_effort}" disabled="disabled" id="dex-pokemon-stats-effort"></th>
     </tr>
     <tr class="header-row">
@@ -382,7 +382,7 @@ ${h.h1(_('Stats'))}
             stat_formula = h.pokedex.formulae.calculated_stat
 %>\
     <tr class="color1">
-        <th>${pokemon_stat.stat.name}</th>
+        <th>${dex_translate(pokemon_stat.stat.name)}</th>
         <td>
             <div class="dex-pokemon-stats-bar-container">
                 <div class="dex-pokemon-stats-bar" style="margin-right: ${(1 - stat_info['percentile']) * 100}%; background-color: ${stat_info['background']}; border-color: ${stat_info['border']};">${pokemon_stat.base_stat}</div>
@@ -548,7 +548,7 @@ ${h.h1(_('Flavor'))}
 
 ${h.h1(_('Locations'))}
 <ul class="see-also">
-<li> <img src="${h.static_uri('spline', 'icons/map--arrow.png')}" alt="See also:"> <a href="${url.current(action='pokemon_locations')}">Ridiculously detailed breakdown</a> </li>
+<li> <img src="${h.static_uri('spline', 'icons/map--arrow.png')}" alt="${_("See also:")}"> <a href="${url.current(action='pokemon_locations')}">${_("Ridiculously detailed breakdown")}</a> </li>
 </ul>
 
 <dl class="dex-simple-encounters">
