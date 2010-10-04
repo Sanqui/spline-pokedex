@@ -309,7 +309,7 @@ ${h.h1(_(u'Similar moves'))}
 <p>${_("No other moves have the same effect as %s") % c.move.name}.</p>
 % endif
 
-${h.h1(_(u'Pokémon', context='plural'), id='pokemon')}
+${h.h1(_(u'Pokémon', context='plural'))}
 % if c.move.damage_class.name != u'None':
 <p>${c.move.type.name.capitalize()} Pokémon get STAB, and have their types highlighted in green.</p>
 <p>Pokémon with higher ${u'Special Attack' if c.move.damage_class.name == u'Special' else u'Attack'} are more suited to ${c.move.name}'s ${c.move.damage_class.name} damage, and have the stat highlighted in green.</p>

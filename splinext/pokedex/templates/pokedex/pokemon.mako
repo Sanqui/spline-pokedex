@@ -5,14 +5,13 @@
 <%! import re %>\
 
 <%! from splinext.pokedex import i18n %>\
+<% _ = i18n.Translator(c) %>
 
 <%def name="title()">
-    <% _ = i18n.Translator(c) %>
     ${_(u"{name} – Pokémon #{number}").format(name=c.pokemon.full_name, number=c.pokemon.national_id)}
 </%def>
 
 <%def name="title_in_page()">
-<% _ = i18n.Translator(c) %>
 <ul id="breadcrumbs">
     <li><a href="${url('/dex')}">${_(u'Pokédex')}</a></li>
     <li><a href="${url(controller='dex', action='pokemon_list')}">${_(u'Pokémon')}</a></li>
@@ -25,7 +24,6 @@ ${dexlib.pokemon_page_header()}
 
 <%lib:cache_content>
 <% dex_translate = i18n.DexTranslator(c) %>
-<% _ = i18n.Translator(c) %>
 
 ${h.h1(_('Essentials'))}
 
@@ -640,7 +638,7 @@ ${h.h1(_('Moves'))}
 % endfor
 </table>
 
-${h.h1(_('External Links'), id='links')}
+${h.h1(_('External Links'), id=_('links', context='header id'))}
 <%
     # Some sites don't believe in Unicode URLs.  Scoff, scoff.
     # And they all do it differently.  Ugh, ugh.

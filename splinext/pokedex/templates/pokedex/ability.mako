@@ -76,7 +76,7 @@ ${h.h1(_('Flavor'))}
 </div>
 
 
-${h.h1(_(u'Pokémon', context='plural'), id='pokemon')}
+${h.h1(_(u'Pokémon', context='plural'))}
 <table class="dex-pokemon-moves striped-rows">
     ${dexlib.pokemon_table_columns()}
     <thead>
