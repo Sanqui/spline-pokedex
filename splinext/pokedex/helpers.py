@@ -19,6 +19,10 @@ from pokedex.roomaji import romanize
 
 import spline.lib.helpers as h
 
+# We can't translate at import time, but _ will mark strings as translatable
+# Functions that need translation will take a "_" parameter, which defaults
+# to this:
+_ = unicode
 
 def make_thingy_url(thingy, subpage=None):
     u"""Given a thingy (Pokémon, move, type, whatever), returns a URL to it.
@@ -167,18 +171,24 @@ def pokedex_img(src, **attr):
 # XXX Should these be able to promote to db objects, rather than demoting to
 # strings and integers?  If so, how to do that without requiring db access
 # from here?
-def generation_icon(generation):
+def generation_icon(generation, _=_):
     """Returns a generation icon, given a generation number."""
     # Convert generation to int if necessary
     if not isinstance(generation, int):
         generation = generation.id
 
     return pokedex_img('versions/generation-%d.png' % generation,
-                       alt=u"Generation %d" % generation,
-                       title=u"Generation %d" % generation)
+                       alt=_(u"Generation %d") % generation,
+                       title=_(u"Generation %d") % generation)
 
-def version_icons(*versions):
-    """Returns some version icons, given a list of version names."""
+def version_icons(*versions, **kwargs):
+    """Returns some version icons, given a list of version names.
+
+    Keyword arguments:
+    `dex_translate`: translation function for version names
+    """
+    # python's argument_list syntax is kind of limited here
+    dex_translate = kwargs.get('dex_translate', _)
     version_icons = u''
     comma = chain([u''], repeat(u', '))
     for version in versions:
@@ -188,7 +198,8 @@ def version_icons(*versions):
 
         version_filename = filename_from_name(version)
         version_icons += pokedex_img(u'versions/%s.png' % version_filename,
-                                     alt=comma.next() + version, title=version)
+                                     alt=comma.next() + dex_translate(version),
+                                     title=dex_translate(version))
 
     return version_icons
 
@@ -277,11 +288,14 @@ def pokemon_link(pokemon, content=None, to_flavor=False, **attr):
         )
 
 
-def damage_class_icon(damage_class):
+def damage_class_icon(damage_class, dex_translate=_, _=_):
     return pokedex_img(
         "chrome/damage-classes/%s.png" % damage_class.name.lower(),
         alt=damage_class.name,
-        title="%s: %s" % (damage_class.name, damage_class.description),
+        title=_("%s: %s") % (
+                dex_translate(damage_class.name),
+                dex_translate(damage_class.description),
+            )
     )
 
 
@@ -336,16 +350,16 @@ type_efficacy_label = {
 
 # Gender rates, translated from -1..8 to useful text
 gender_rate_label = {
-    -1: u'genderless',
-    0: u'always male',
-    1: u'⅞ male, ⅛ female',
-    2: u'¾ male, ¼ female',
-    3: u'⅝ male, ⅜ female',
-    4: u'½ male, ½ female',
-    5: u'⅜ male, ⅝ female',
-    6: u'¼ male, ¾ female',
-    7: u'⅛ male, ⅞ female',
-    8: u'always female',
+    -1: _(u'genderless'),
+    0: _(u'always male'),
+    1: _(u'⅞ male, ⅛ female'),
+    2: _(u'¾ male, ¼ female'),
+    3: _(u'⅝ male, ⅜ female'),
+    4: _(u'½ male, ½ female'),
+    5: _(u'⅜ male, ⅝ female'),
+    6: _(u'¼ male, ¾ female'),
+    7: _(u'⅛ male, ⅞ female'),
+    8: _(u'always female'),
 }
 
 def article(noun):
@@ -354,7 +368,7 @@ def article(noun):
         return u'an'
     return u'a'
 
-def evolution_description(evolution):
+def evolution_description(evolution, _=_):
     """Crafts a human-readable description from a `pokemon_evolution` row
     object.
     """
@@ -362,54 +376,54 @@ def evolution_description(evolution):
 
     # Trigger
     if evolution.trigger.identifier == u'level_up':
-        chunks.append(u'Level up')
+        chunks.append(_(u'Level up'))
     elif evolution.trigger.identifier == u'trade':
-        chunks.append(u'Trade')
+        chunks.append(_(u'Trade'))
     elif evolution.trigger.identifier == u'use_item':
-        chunks.append(u"Use {article} {item}".format(
+        chunks.append(_(u"Use {article} {item}").format(
             article=article(evolution.trigger_item.name),
             item=evolution.trigger_item.name))
     elif evolution.trigger.identifier == u'shed':
         chunks.append(
-            u"Evolve {from_pokemon} ({to_pokemon} will consume "
-            u"a Poké Ball and appear in a free party slot)".format(
+            _(u"Evolve {from_pokemon} ({to_pokemon} will consume "
+            u"a Poké Ball and appear in a free party slot)").format(
                 from_pokemon=evolution.from_pokemon.full_name,
                 to_pokemon=evolution.to_pokemon.full_name))
     else:
-        chunks.append(u'Do something')
+        chunks.append(_(u'Do something'))
 
     # Conditions
     if evolution.gender:
-        chunks.append(u"{0}s only".format(evolution.gender))
+        chunks.append(_(u"{0}s only").format(evolution.gender))
     if evolution.time_of_day:
-        chunks.append(u"during the {0}".format(evolution.time_of_day))
+        chunks.append(_(u"during the {0}").format(evolution.time_of_day))
 
     if evolution.minimum_level:
-        chunks.append(u"starting at level {0}".format(evolution.minimum_level))
+        chunks.append(_(u"starting at level {0}").format(evolution.minimum_level))
     if evolution.location_id:
-        chunks.append(u"around {0}".format(evolution.location.name))
+        chunks.append(_(u"around {0}").format(evolution.location.name))
     if evolution.held_item_id:
-        chunks.append(u"while holding {article} {item}".format(
+        chunks.append(_(u"while holding {article} {item}").format(
             article=article(evolution.held_item.name),
             item=evolution.held_item.name))
     if evolution.known_move_id:
-        chunks.append(u"knowing {0}".format(evolution.known_move.name))
+        chunks.append(_(u"knowing {0}").format(evolution.known_move.name))
     if evolution.minimum_happiness:
-        chunks.append(u"with at least {0} happiness".format(
+        chunks.append(_(u"with at least {0} happiness").format(
             evolution.minimum_happiness))
     if evolution.minimum_beauty:
-        chunks.append(u"with at least {0} beauty".format(
+        chunks.append(_(u"with at least {0} beauty").format(
             evolution.minimum_beauty))
 
     if evolution.relative_physical_stats is not None:
         if evolution.relative_physical_stats < 0:
-            op = u'<'
+            op = _(u'<')
         elif evolution.relative_physical_stats > 0:
-            op = u'>'
+            op = _(u'>')
         else:
-            op = u'='
+            op = _(u'=')
 
-        chunks.append(u"when Attack {0} Defense".format(op))
+        chunks.append(_(u"when Attack {0} Defense").format(op))
 
     return u', '.join(chunks)
 
@@ -457,7 +471,7 @@ def scale_sizes(size_dict, dimensions=1):
     return scaled_sizes
 
 
-def apply_pokemon_template(template, pokemon):
+def apply_pokemon_template(template, pokemon, dex_translate=_, _=_):
     u"""`template` should be a string.Template object.
 
     Uses safe_substitute to inject some fields from the Pokémon into the
@@ -479,8 +493,8 @@ def apply_pokemon_template(template, pokemon):
         weight_lb=format_weight_imperial(pokemon.weight),
         weight_kg=format_weight_metric(pokemon.weight),
 
-        gender=gender_rate_label[pokemon.gender_rate],
-        species=pokemon.species,
+        gender=_(gender_rate_label[pokemon.gender_rate]),
+        species=dex_translate(pokemon.species),
         base_experience=pokemon.base_experience,
         capture_rate=pokemon.capture_rate,
         base_happiness=pokemon.base_happiness,
@@ -492,31 +506,31 @@ def apply_pokemon_template(template, pokemon):
     # big deal if it does
     if 'type' in template.template:
         types = pokemon.types
-        d['type'] = u'/'.join(_.name for _ in types)
-        d['type1'] = types[0].name
-        d['type2'] = types[1].name if len(types) > 1 else u''
+        d['type'] = u'/'.join(dex_translate(type_.name) for type_ in types)
+        d['type1'] = dex_translate(types[0].name)
+        d['type2'] = dex_translate(types[1].name) if len(types) > 1 else u''
 
     if 'egg_group' in template.template:
         egg_groups = pokemon.egg_groups
-        d['egg_group'] = u'/'.join(_.name for _ in egg_groups)
-        d['egg_group1'] = egg_groups[0].name
-        d['egg_group2'] = egg_groups[1].name if len(egg_groups) > 1 else u''
+        d['egg_group'] = u'/'.join(dex_translate(group.name) for group in egg_groups)
+        d['egg_group1'] = dex_translate(egg_groups[0].name)
+        d['egg_group2'] = dex_translate(egg_groups[1].name) if len(egg_groups) > 1 else u''
 
     if 'ability' in template.template:
         abilities = pokemon.abilities
-        d['ability'] = u'/'.join(_.name for _ in abilities)
-        d['ability1'] = abilities[0].name
-        d['ability2'] = abilities[1].name if len(abilities) > 1 else u''
+        d['ability'] = u'/'.join(dex_translate(ability.name) for ability in abilities)
+        d['ability1'] = dex_translate(abilities[0].name)
+        d['ability2'] = dex_translate(abilities[1].name) if len(abilities) > 1 else u''
 
     if 'color' in template.template:
-        d['color'] = pokemon.color
+        d['color'] = dex_translate(pokemon.color)
 
     if 'habitat' in template.template:
-        d['habitat'] = pokemon.habitat
+        d['habitat'] = dex_translate(pokemon.habitat)
 
     if 'shape' in template.template:
         if pokemon.shape:
-            d['shape'] = pokemon.shape.name
+            d['shape'] = dex_translate(pokemon.shape.name)
         else:
             d['shape'] = ''
 
