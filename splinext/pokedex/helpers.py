@@ -311,10 +311,10 @@ def type_link(type):
     )
 
 
-def item_link(item, include_icon=True):
+def item_link(item, include_icon=True, dex_translate=_):
     """Returns a link to the requested item."""
 
-    item_name = item.name
+    item_name = dex_translate(item.name)
 
     if include_icon:
         if item.pocket.identifier == u'machines':
@@ -362,13 +362,13 @@ gender_rate_label = {
     8: _(u'always female'),
 }
 
-def article(noun):
+def article(noun, _=_):
     """Returns 'a' or 'an', as appropriate."""
     if noun[0].lower() in u'aeiou':
-        return u'an'
-    return u'a'
+        return _(u'an')
+    return _(u'a')
 
-def evolution_description(evolution, _=_):
+def evolution_description(evolution, _=_, dex_translate=_):
     """Crafts a human-readable description from a `pokemon_evolution` row
     object.
     """
@@ -380,15 +380,16 @@ def evolution_description(evolution, _=_):
     elif evolution.trigger.identifier == u'trade':
         chunks.append(_(u'Trade'))
     elif evolution.trigger.identifier == u'use_item':
+        item_name = dex_translate(evolution.trigger_item.name)
         chunks.append(_(u"Use {article} {item}").format(
-            article=article(evolution.trigger_item.name),
-            item=evolution.trigger_item.name))
+            article=article(item_name, _=_),
+            item=dex_translate(item_name)))
     elif evolution.trigger.identifier == u'shed':
         chunks.append(
             _(u"Evolve {from_pokemon} ({to_pokemon} will consume "
             u"a Poké Ball and appear in a free party slot)").format(
-                from_pokemon=evolution.from_pokemon.full_name,
-                to_pokemon=evolution.to_pokemon.full_name))
+                from_pokemon=dex_translate(evolution.from_pokemon.full_name),
+                to_pokemon=dex_translate(evolution.to_pokemon.full_name)))
     else:
         chunks.append(_(u'Do something'))
 

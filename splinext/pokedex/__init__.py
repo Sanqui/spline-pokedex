@@ -175,7 +175,7 @@ class PokedexPlugin(PluginBase):
         return [
             TranslatablePluginLink(_(u'Pokédex'), url('/dex'), children=[
                 TranslatablePluginLink(_(u'Core pages'), None, children=[
-                    TranslatablePluginLink(_(u'Pokémon'), url(controller='dex', action='pokemon_list'), children=[
+                    TranslatablePluginLink(_(u'Pokémon'), url(controller='dex', action='pokemon_list'), i18n_context='plural', children=[
                         TranslatablePluginLink(_(u'Awesome search'), url(controller='dex_search', action='pokemon_search')),
                     ]),
                     TranslatablePluginLink(_(u'Moves'), url(controller='dex', action='moves_list'), children=[

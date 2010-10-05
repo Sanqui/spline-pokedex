@@ -5,17 +5,18 @@
 <%! import re %>\
 
 <%! from splinext.pokedex import i18n %>\
-<% _ = i18n.Translator(c) %>
 
-<%def name="title()">
-    ${_(u"{name} – Pokémon #{number}").format(name=c.pokemon.full_name, number=c.pokemon.national_id)}
+<%def name="title()"><% _ = i18n.Translator(c) %><% dex_translate = i18n.DexTranslator(c) %>\
+${_(u"{name} – Pokémon #{number}").format(name=dex_translate(c.pokemon.full_name), number=c.pokemon.national_id)}
 </%def>
 
 <%def name="title_in_page()">
+<% _ = i18n.Translator(c) %>
+<% dex_translate = i18n.DexTranslator(c) %>
 <ul id="breadcrumbs">
     <li><a href="${url('/dex')}">${_(u'Pokédex')}</a></li>
     <li><a href="${url(controller='dex', action='pokemon_list')}">${_(u'Pokémon')}</a></li>
-    <li>${c.pokemon.full_name}</li>
+    <li>${dex_translate(c.pokemon.full_name)}</li>
 </ul>
 </%def>
 
@@ -23,6 +24,7 @@ ${dexlib.pokemon_page_header()}
 
 
 <%lib:cache_content>
+<% _ = i18n.Translator(c) %>
 <% dex_translate = i18n.DexTranslator(c) %>
 
 ${h.h1(_('Essentials'))}
@@ -31,7 +33,7 @@ ${h.h1(_('Essentials'))}
 <div class="dex-page-portrait">
     <p id="dex-page-name">${c.pokemon.name}</p>
     % if c.pokemon.forme_name:
-    <p id="dex-pokemon-forme">${_("{0} Forme").format(c.pokemon.forme_name.capitalize())}</p>
+    <p id="dex-pokemon-forme">${_("{0} Forme").format(dex_translate(c.pokemon.forme_name).capitalize())}</p>
     % endif
     <div id="dex-pokemon-portrait-sprite">
         ${h.pokedex.pokemon_sprite(c.pokemon, prefix='black-white')}
@@ -71,14 +73,14 @@ ${h.h1(_('Essentials'))}
     <h2>${_(u"Pokédex Numbers")}</h2>
     <dl>
         <dt>${_(u"Introduced in")}</dt>
-        <dd>${h.pokedex.generation_icon(c.pokemon.generation)}</dd>\
+        <dd>${h.pokedex.generation_icon(c.pokemon.generation, _=_)}</dd>\
 
         % for number in c.pokemon.normal_form.dex_numbers:
         <dt>${number.pokedex.name}</dt>
         <dd>
             ${number.pokedex_number}
             % if number.pokedex.version_groups:
-            ${h.pokedex.version_icons(*[v for vg in number.pokedex.version_groups for v in vg.versions])}
+            ${h.pokedex.version_icons(*[v for vg in number.pokedex.version_groups for v in vg.versions], dex_translate=_)}
             % endif
         </dd>
 
@@ -89,7 +91,7 @@ ${h.h1(_('Essentials'))}
     <dl>
         % for foreign_name in c.pokemon.normal_form.foreign_names:
         ## </dt> has to come right after the flag or else there's space between the flag and the colon
-        <dt>${foreign_name.language.name}
+        <dt>${dex_translate(foreign_name.language.name)}
         <img src="${h.static_uri('spline', "flags/{0}.png".format(foreign_name.language.iso3166))}" alt=""></dt>
         % if foreign_name.language.name == 'Japanese':
         <dd>${foreign_name.name} (${h.pokedex.romanize(foreign_name.name)})</dd>
@@ -105,7 +107,7 @@ ${h.h1(_('Essentials'))}
         <dt>${_(u"Gender")}</dt>
         <dd>
             ${h.pokedex.pokedex_img('gender-rates/%d.png' % c.pokemon.gender_rate, alt='')}
-            ${h.pokedex.gender_rate_label[c.pokemon.gender_rate]}
+            ${_(h.pokedex.gender_rate_label[c.pokemon.gender_rate])}
             <a href="${url(controller='dex_search', action='pokemon_search', gender_rate=c.pokemon.gender_rate)}"
                 class="dex-subtle-search-link">
                 <img src="${h.static_uri('spline', 'icons/magnifier-small.png')}" alt="Search: " title="Search">
@@ -116,7 +118,7 @@ ${h.h1(_('Essentials'))}
         <dd>
             <ul class="inline-commas">
                 % for i, egg_group in enumerate(c.pokemon.egg_groups):
-                <li>${egg_group.name}</li>
+                <li>${dex_translate(egg_group.name)}</li>
                 % endfor
             </ul>
             % if len(c.pokemon.egg_groups) > 1:
@@ -144,7 +146,7 @@ ${h.h1(_('Essentials'))}
             ## Then there's the final lap after the egg hits zero.  So, for MA/FB steps: (ceil(counter / 2.0) + 1) * 255
             ## ceil() returns a float, but we can avoid a messy int(ceil(...)) like so: ceil(x / 2.0) == floor((x + 1) / 2.0) == (x + 1) // 2
             ## And thus: (ceil(x / 2.0) + 1) * 255 == ((x + 1) // 2 + 1) * 255 == (x + 3) // 2 * 255
-            <span class="annotation" title="With Magma Armor or Flame Body">${(c.pokemon.hatch_counter + 3) // 2 * 255}</span>
+            <span class="annotation" title="${_('With Magma Armor or Flame Body')}">${(c.pokemon.hatch_counter + 3) // 2 * 255}</span>
         </dd>
     </dl>
 
@@ -187,7 +189,7 @@ ${h.h1(_('Essentials'))}
             <ul>
                 % for pokemon_stat in c.pokemon.stats:
                 % if pokemon_stat.effort:
-                <li>${pokemon_stat.effort} ${pokemon_stat.stat.name}</li>
+                <li>${pokemon_stat.effort} ${dex_translate(pokemon_stat.stat.name)}</li>
                 % endif
                 % endfor
             </ul>
@@ -230,9 +232,9 @@ ${h.h1(_('Essentials'))}
         % if i == 0:
         <td class="versions" rowspan="${len(item_records) or 1}">
             % if len(version_dict) == 1:
-            ${h.pokedex.generation_icon(generation)}
+            ${h.pokedex.generation_icon(generation, _=_)}
             % else:
-            ${h.pokedex.version_icons(*versions)}
+            ${h.pokedex.version_icons(*versions, dex_translate=dex_translate)}
             % endif
         </td>
         % else:
@@ -243,7 +245,7 @@ ${h.h1(_('Essentials'))}
         ## Print the item and rarity.  Might be nothing
         % if i < len(item_records):
         <td class="rarity">${item_records[i][1]}%</td>
-        <td class="item">${h.pokedex.item_link(item_records[i][0])}</td>
+        <td class="item">${h.pokedex.item_link(item_records[i][0], dex_translate=dex_translate)}</td>
         % else:
         <td class="rarity"></td>
         <td class="item">${_(u"nothing")}</td>
@@ -303,11 +305,11 @@ ${h.h1(_('Evolution'))}
         % endif
         % if col['pokemon'].parent_evolution:
         <span class="dex-evolution-chain-method">
-            ${h.pokedex.evolution_description(col['pokemon'].parent_evolution)}
+            ${h.pokedex.evolution_description(col['pokemon'].parent_evolution, _=_, dex_translate=dex_translate)}
         </span>
         % elif col['pokemon'].is_baby and c.pokemon.evolution_chain.baby_trigger_item:
         <span class="dex-evolution-chain-method">
-            ${_(u"Either parent must hold ")} ${h.pokedex.item_link(c.pokemon.evolution_chain.baby_trigger_item, include_icon=False)}
+            ${_(u"Either parent must hold ")} ${h.pokedex.item_link(c.pokemon.evolution_chain.baby_trigger_item, include_icon=False, dex_translate=dex_translate)}
         </span>
         % endif
     </td>
@@ -318,7 +320,7 @@ ${h.h1(_('Evolution'))}
 </tbody>
 </table>
 % if c.pokemon.normal_form.form_group:
-<h2 id="forms"> <a href="#forms" class="subtle">${c.pokemon.name} Forms</a> </h2>
+<h2 id="forms"> <a href="#forms" class="subtle">${_("%s Forms") % c.pokemon.name}</a> </h2>
 <ul class="inline">
     % for form in [formsprite.name for formsprite in c.pokemon.normal_form.form_sprites]:
 <%
@@ -329,7 +331,7 @@ ${h.h1(_('Evolution'))}
     <li>${h.pokedex.pokemon_link(c.pokemon, h.pokedex.pokemon_sprite(c.pokemon, 'black-white', form=form), form=form, class_=link_class)}</li>
     % endfor
 </ul>
-<p> ${c.pokemon.normal_form.form_group.description.as_html | n} </p>
+<p> ${dex_translate(c.pokemon.normal_form.form_group.description).as_html | n} </p>
 % endif
 
 ${h.h1(_('Stats'))}
@@ -409,7 +411,7 @@ ${h.h1(_('Stats'))}
 
 ${h.h1(_('Flavor'))}
 <ul class="see-also">
-<li> <img src="${h.static_uri('spline', 'icons/arrow-000-medium.png')}" alt="See also:"> <a href="${url.current(action='pokemon_flavor')}">Detailed flavor page covering all versions</a> </li>
+<li> <img src="${h.static_uri('spline', 'icons/arrow-000-medium.png')}" alt="${_('See also:')}"> <a href="${url.current(action='pokemon_flavor')}">${_('Detailed flavor page covering all versions')}</a> </li>
 </ul>
 
 ## Only showing current generation's sprites and text
@@ -454,7 +456,7 @@ ${h.h1(_('Flavor'))}
         <dt>${_("Color")}</dt>
         <dd>
             <span class="dex-color-${c.pokemon.color}"></span>
-            ${c.pokemon.color}
+            ${dex_translate(c.pokemon.color)}
             <a href="${url(controller='dex_search', action='pokemon_search', color=c.pokemon.color)}"
                 class="dex-subtle-search-link">
                 <img src="${h.static_uri('spline', 'icons/magnifier-small.png')}" alt="Search: " title="Search">
@@ -482,7 +484,7 @@ ${h.h1(_('Flavor'))}
         <dt>${_("Habitat")} ${h.pokedex.version_icons(u'FireRed', u'LeafGreen')}</dt>
         <dd>
             ${h.pokedex.pokedex_img('chrome/habitats/%s.png' % h.pokedex.filename_from_name(c.pokemon.habitat))}
-            ${c.pokemon.habitat}
+            ${dex_translate(c.pokemon.habitat)}
             <a href="${url(controller='dex_search', action='pokemon_search', habitat=c.pokemon.habitat)}"
                 class="dex-subtle-search-link">
                 <img src="${h.static_uri('spline', 'icons/magnifier-small.png')}" alt="Search: " title="Search">
@@ -555,22 +557,22 @@ ${h.h1(_('Locations'))}
     ## Sort versions by order, which happens to be id
     % for version, terrain_etc in sorted(c.locations.items(), \
                                          key=lambda (k, v): k.id):
-    <dt>${version.name} ${h.pokedex.version_icons(version)}</dt>
+    <dt>${dex_translate(version.name)} ${h.pokedex.version_icons(version, dex_translate=dex_translate)}</dt>
     <dd>
         ## Sort terrain by name
         % for terrain, area_condition_encounters in sorted(terrain_etc.items(), \
                                                            key=lambda (k, v): k.id):
         <div class="dex-simple-encounters-terrain">
             ${h.pokedex.pokedex_img('encounters/' + c.encounter_terrain_icons.get(terrain.name, 'unknown.png'), \
-                                    alt=terrain.name)}
+                                    alt=dex_translate(terrain.name))}
             <ul>
                 ## Sort locations by name
                 % for location_area, (conditions, combined_encounter) \
                     in sorted(area_condition_encounters.items(), \
                               key=lambda (k, v): (k.location.name, k.name)):
                 <li title="${combined_encounter.level} ${combined_encounter.rarity}% ${';'.join(condition.name for condition in conditions)}">
-                    <a href="${url(controller="dex", action="locations", name=location_area.location.name.lower())}${'#area:' + location_area.name if location_area.name else ''}">
-                        ${location_area.location.name}${', ' + location_area.name if location_area.name else ''}
+                    <a href="${url(controller="dex", action="locations", name=location_area.location.name.lower())}${'#area:' + dex_translate(location_area.name) if location_area.name else ''}">
+                        ${dex_translate(location_area.location.name)}${', ' + dex_translate(location_area.name) if location_area.name else ''}
                     </a>
                 </li>
                 % endfor
