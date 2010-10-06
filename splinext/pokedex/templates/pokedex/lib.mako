@@ -273,3 +273,12 @@ collapse_key = h.pokedex.collapse_flavor_text_key(literal=obdurate)
 % endfor
 </dl>
 </%def>
+
+<%def name="subtle_search(**kwargs)">
+    <% _ = kwargs.pop('_', unicode) %>
+    <a href="${url(controller='dex_search', **kwargs)}"
+        class="dex-subtle-search-link">
+        <img src="${h.static_uri('spline', 'icons/magnifier-small.png')}" alt="${_('Search: ')}" title="${_('Search')}">
+    </a>
+</%def>
+
