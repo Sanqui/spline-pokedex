@@ -636,7 +636,6 @@ ${h.h1(_('External Links'), id=_('links', context='header id'))}
             smogon_name += '-' + c.pokemon.forme_name[0].lower()
 %>
 <ul class="classic-list">
-<li><a href="http://veekun.com/dex/pokemon/${c.pokemon.name}">${_("Official veekun")}</a></li>
 % if c.pokemon.generation.id <= 1:
 <li>${h.pokedex.generation_icon(1)} <a href="http://www.math.miami.edu/~jam/azure/pokedex/species/${"%03d" % c.pokemon.national_id}.htm">${_("Azure Heights")}</a></li>
 % endif

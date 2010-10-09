@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: spline-pokedex 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2010-10-09 17:24+0200\n"
+"POT-Creation-Date: 2010-10-09 17:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -347,7 +347,7 @@ msgstr ""
 
 #: splinext/pokedex/templates/pokedex/ability.mako:99
 #: splinext/pokedex/templates/pokedex/move.mako:374
-#: splinext/pokedex/templates/pokedex/pokemon.mako:643
+#: splinext/pokedex/templates/pokedex/pokemon.mako:642
 #: splinext/pokedex/templates/pokedex/type.mako:119
 #: splinext/pokedex/templates/pokedex/type.mako:122
 msgid "Bulbapedia"
@@ -355,19 +355,19 @@ msgstr ""
 
 #: splinext/pokedex/templates/pokedex/ability.mako:100
 #: splinext/pokedex/templates/pokedex/move.mako:375
-#: splinext/pokedex/templates/pokedex/pokemon.mako:647
+#: splinext/pokedex/templates/pokedex/pokemon.mako:646
 msgid "Legendary Pokémon"
 msgstr ""
 
 #: splinext/pokedex/templates/pokedex/ability.mako:101
 #: splinext/pokedex/templates/pokedex/move.mako:377
-#: splinext/pokedex/templates/pokedex/pokemon.mako:649
+#: splinext/pokedex/templates/pokedex/pokemon.mako:648
 msgid "Serebii.net"
 msgstr ""
 
 #: splinext/pokedex/templates/pokedex/ability.mako:102
 #: splinext/pokedex/templates/pokedex/move.mako:378
-#: splinext/pokedex/templates/pokedex/pokemon.mako:650
+#: splinext/pokedex/templates/pokedex/pokemon.mako:649
 #: splinext/pokedex/templates/pokedex/type.mako:120
 #: splinext/pokedex/templates/pokedex/type.mako:123
 msgid "Smogon"
@@ -813,13 +813,13 @@ msgid "No other moves have the same effect as %s"
 msgstr ""
 
 #: splinext/pokedex/templates/pokedex/move.mako:372
-#: splinext/pokedex/templates/pokedex/pokemon.mako:641
+#: splinext/pokedex/templates/pokedex/pokemon.mako:640
 #: splinext/pokedex/templates/pokedex/type.mako:116
 msgid "Azure Heights"
 msgstr ""
 
 #: splinext/pokedex/templates/pokedex/move.mako:376
-#: splinext/pokedex/templates/pokedex/pokemon.mako:648
+#: splinext/pokedex/templates/pokedex/pokemon.mako:647
 msgid "PsyPoke"
 msgstr ""
 
@@ -1236,11 +1236,7 @@ msgstr ""
 msgid "header id|links"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:639
-msgid "Official veekun"
-msgstr ""
-
-#: splinext/pokedex/templates/pokedex/pokemon.mako:645
+#: splinext/pokedex/templates/pokedex/pokemon.mako:644
 msgid "Gengar and Haunter's Pokémon Dungeon"
 msgstr ""
 

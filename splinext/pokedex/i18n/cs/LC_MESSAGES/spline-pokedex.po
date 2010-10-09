@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: spline 0.1\n"
 "Report-Msgid-Bugs-To: encukou@gmail.com\n"
 "POT-Creation-Date: 2010-09-30 23:08+0300\n"
-"PO-Revision-Date: 2010-10-09 17:25+0200\n"
+"PO-Revision-Date: 2010-10-09 17:50+0200\n"
 "Last-Translator: Petr 'En-Cu-Kou' Viktorin <encukou@gmail.com>\n"
 "Language-Team: cs <encukou@gmail.com>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
@@ -355,7 +355,7 @@ msgstr "Externí odkazy (v angličtině)"
 
 #: splinext/pokedex/templates/pokedex/ability.mako:99
 #: splinext/pokedex/templates/pokedex/move.mako:374
-#: splinext/pokedex/templates/pokedex/pokemon.mako:643
+#: splinext/pokedex/templates/pokedex/pokemon.mako:642
 #: splinext/pokedex/templates/pokedex/type.mako:119
 #: splinext/pokedex/templates/pokedex/type.mako:122
 msgid "Bulbapedia"
@@ -363,19 +363,19 @@ msgstr "Bulbapedie"
 
 #: splinext/pokedex/templates/pokedex/ability.mako:100
 #: splinext/pokedex/templates/pokedex/move.mako:375
-#: splinext/pokedex/templates/pokedex/pokemon.mako:647
+#: splinext/pokedex/templates/pokedex/pokemon.mako:646
 msgid "Legendary Pokémon"
 msgstr "Legendary Pokémon"
 
 #: splinext/pokedex/templates/pokedex/ability.mako:101
 #: splinext/pokedex/templates/pokedex/move.mako:377
-#: splinext/pokedex/templates/pokedex/pokemon.mako:649
+#: splinext/pokedex/templates/pokedex/pokemon.mako:648
 msgid "Serebii.net"
 msgstr "Serebii.net"
 
 #: splinext/pokedex/templates/pokedex/ability.mako:102
 #: splinext/pokedex/templates/pokedex/move.mako:378
-#: splinext/pokedex/templates/pokedex/pokemon.mako:650
+#: splinext/pokedex/templates/pokedex/pokemon.mako:649
 #: splinext/pokedex/templates/pokedex/type.mako:120
 #: splinext/pokedex/templates/pokedex/type.mako:123
 msgid "Smogon"
@@ -830,13 +830,13 @@ msgid "No other moves have the same effect as %s"
 msgstr "Zádný jiný útok nemá stejný efekt jako %s"
 
 #: splinext/pokedex/templates/pokedex/move.mako:372
-#: splinext/pokedex/templates/pokedex/pokemon.mako:641
+#: splinext/pokedex/templates/pokedex/pokemon.mako:640
 #: splinext/pokedex/templates/pokedex/type.mako:116
 msgid "Azure Heights"
 msgstr "Azure Heights"
 
 #: splinext/pokedex/templates/pokedex/move.mako:376
-#: splinext/pokedex/templates/pokedex/pokemon.mako:648
+#: splinext/pokedex/templates/pokedex/pokemon.mako:647
 msgid "PsyPoke"
 msgstr "PsyPoke"
 
@@ -1260,11 +1260,7 @@ msgstr ""
 msgid "header id|links"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:639
-msgid "Official veekun"
-msgstr "Anglický veekun"
-
-#: splinext/pokedex/templates/pokedex/pokemon.mako:645
+#: splinext/pokedex/templates/pokedex/pokemon.mako:644
 msgid "Gengar and Haunter's Pokémon Dungeon"
 msgstr "Gengar and Haunter's Pokémon Dungeon"
 
@@ -2035,4 +2031,7 @@ msgstr "Pomoc!"
 #: splinext/pokedex/templates/widgets/pokedex_lookup.mako:11
 msgid "lookup widget|Look up"
 msgstr ""
+
+#~ msgid "Official veekun"
+#~ msgstr "Anglický veekun"
 
