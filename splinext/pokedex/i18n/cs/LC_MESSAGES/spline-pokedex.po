@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: spline 0.1\n"
 "Report-Msgid-Bugs-To: encukou@gmail.com\n"
 "POT-Creation-Date: 2010-09-30 23:08+0300\n"
-"PO-Revision-Date: 2010-10-04 19:17+0200\n"
+"PO-Revision-Date: 2010-10-09 17:25+0200\n"
 "Last-Translator: Petr 'En-Cu-Kou' Viktorin <encukou@gmail.com>\n"
 "Language-Team: cs <encukou@gmail.com>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
-#: splinext/pokedex/__init__.py:170
+#: splinext/pokedex/__init__.py:176
 #: splinext/pokedex/templates/pokedex/ability.mako:11
 #: splinext/pokedex/templates/pokedex/ability_list.mako:9
 #: splinext/pokedex/templates/pokedex/item.mako:10
@@ -45,11 +45,11 @@ msgstr ""
 msgid "Pokédex"
 msgstr "Pokédex"
 
-#: splinext/pokedex/__init__.py:171
+#: splinext/pokedex/__init__.py:177
 msgid "Core pages"
 msgstr "Hlavní stránky"
 
-#: splinext/pokedex/__init__.py:172
+#: splinext/pokedex/__init__.py:178
 #: splinext/pokedex/templates/pokedex/nature.mako:107
 #: splinext/pokedex/templates/pokedex/pokemon.mako:18
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:23
@@ -64,15 +64,15 @@ msgstr "Hlavní stránky"
 msgid "Pokémon"
 msgstr "Pokémon"
 
-#: splinext/pokedex/__init__.py:173 splinext/pokedex/__init__.py:176
+#: splinext/pokedex/__init__.py:179 splinext/pokedex/__init__.py:182
 msgid "Awesome search"
 msgstr "Úžasné vyhledávání"
 
-#: splinext/pokedex/__init__.py:175
+#: splinext/pokedex/__init__.py:181
 #: splinext/pokedex/templates/pokedex/move.mako:13
 #: splinext/pokedex/templates/pokedex/move_list.mako:5
 #: splinext/pokedex/templates/pokedex/move_list.mako:11
-#: splinext/pokedex/templates/pokedex/pokemon.mako:586
+#: splinext/pokedex/templates/pokedex/pokemon.mako:553
 #: splinext/pokedex/templates/pokedex/type.mako:96
 #: splinext/pokedex/templates/pokedex/search/moves.mako:12
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:278
@@ -80,14 +80,14 @@ msgstr "Úžasné vyhledávání"
 msgid "Moves"
 msgstr "Útoky"
 
-#: splinext/pokedex/__init__.py:178
+#: splinext/pokedex/__init__.py:184
 #: splinext/pokedex/templates/pokedex/type.mako:12
 #: splinext/pokedex/templates/pokedex/type_list.mako:5
 #: splinext/pokedex/templates/pokedex/type_list.mako:11
 msgid "Types"
 msgstr "Typy"
 
-#: splinext/pokedex/__init__.py:179
+#: splinext/pokedex/__init__.py:185
 #: splinext/pokedex/templates/pokedex/ability.mako:12
 #: splinext/pokedex/templates/pokedex/ability_list.mako:10
 #: splinext/pokedex/templates/pokedex/pokemon.mako:49
@@ -95,7 +95,7 @@ msgstr "Typy"
 msgid "Abilities"
 msgstr "Schopnosti"
 
-#: splinext/pokedex/__init__.py:180
+#: splinext/pokedex/__init__.py:186
 #: splinext/pokedex/templates/pokedex/item.mako:11
 #: splinext/pokedex/templates/pokedex/item_list.mako:5
 #: splinext/pokedex/templates/pokedex/item_list.mako:11
@@ -104,46 +104,190 @@ msgstr "Schopnosti"
 msgid "Items"
 msgstr "Věci"
 
-#: splinext/pokedex/__init__.py:181
+#: splinext/pokedex/__init__.py:187
 #: splinext/pokedex/templates/pokedex/nature.mako:12
 #: splinext/pokedex/templates/pokedex/nature_list.mako:5
 #: splinext/pokedex/templates/pokedex/nature_list.mako:11
 msgid "Natures"
 msgstr "Povahy"
 
-#: splinext/pokedex/__init__.py:183
+#: splinext/pokedex/__init__.py:189
 #: splinext/pokedex/templates/pokedex/gadgets/capture_rate.mako:12
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:10
 #: splinext/pokedex/templates/pokedex/gadgets/stat_calculator.mako:12
 msgid "Gadgets"
 msgstr "Pomůcky"
 
-#: splinext/pokedex/__init__.py:184
+#: splinext/pokedex/__init__.py:190
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:4
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:11
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:17
 msgid "Compare Pokémon"
 msgstr "Porovnat Pokémony"
 
-#: splinext/pokedex/__init__.py:185
+#: splinext/pokedex/__init__.py:191
 #: splinext/pokedex/templates/pokedex/gadgets/capture_rate.mako:6
 #: splinext/pokedex/templates/pokedex/gadgets/capture_rate.mako:13
 msgid "Pokéball performance"
 msgstr "Účinnost Pokéballů"
 
-#: splinext/pokedex/__init__.py:186
+#: splinext/pokedex/__init__.py:192
 #: splinext/pokedex/templates/pokedex/gadgets/stat_calculator.mako:6
 #: splinext/pokedex/templates/pokedex/gadgets/stat_calculator.mako:13
 msgid "Stat calculator"
 msgstr "Kalkulačka statů"
 
-#: splinext/pokedex/__init__.py:188
+#: splinext/pokedex/__init__.py:194
 msgid "Etc."
 msgstr "Etc."
 
-#: splinext/pokedex/__init__.py:189
+#: splinext/pokedex/__init__.py:195
 msgid "Downloads"
 msgstr "Stáhnout"
+
+#. Py2Format
+#: splinext/pokedex/helpers.py:181 splinext/pokedex/helpers.py:182
+#, fuzzy, python-format
+msgid "Generation %d"
+msgstr "1. generace"
+
+#. Py2Format
+#: splinext/pokedex/helpers.py:295
+#, python-format
+msgid "%s: %s"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:353
+msgid "genderless"
+msgstr "bezpohlavní"
+
+#: splinext/pokedex/helpers.py:354
+msgid "always male"
+msgstr "vždy sameček"
+
+#: splinext/pokedex/helpers.py:355
+msgid "⅞ male, ⅛ female"
+msgstr "⅞ samečků, ⅛ samiček"
+
+#: splinext/pokedex/helpers.py:356
+msgid "¾ male, ¼ female"
+msgstr "¾ samečků, ¼ samiček"
+
+#: splinext/pokedex/helpers.py:357
+msgid "⅝ male, ⅜ female"
+msgstr "⅝ samečků, ⅜ samiček"
+
+#: splinext/pokedex/helpers.py:358
+msgid "½ male, ½ female"
+msgstr "½ samečků, ½ samiček"
+
+#: splinext/pokedex/helpers.py:359
+msgid "⅜ male, ⅝ female"
+msgstr "⅜ samečků, ⅝ samiček"
+
+#: splinext/pokedex/helpers.py:360
+msgid "¼ male, ¾ female"
+msgstr "¼ samečků, ¾ samiček"
+
+#: splinext/pokedex/helpers.py:361
+msgid "⅛ male, ⅞ female"
+msgstr "⅛ samečků, ⅞ samiček"
+
+#: splinext/pokedex/helpers.py:362
+msgid "always female"
+msgstr "vždy samička"
+
+#: splinext/pokedex/helpers.py:368
+msgid "an"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:369
+msgid "a"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:379
+msgid "Level up"
+msgstr "Získáním úrovně"
+
+#: splinext/pokedex/helpers.py:381
+msgid "Trade"
+msgstr "Výměnou"
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:384
+msgid "Use {article} {item}"
+msgstr "Použitím {article} {item}"
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:389
+msgid ""
+"Evolve {from_pokemon} ({to_pokemon} will consume a Poké Ball and appear "
+"in a free party slot)"
+msgstr ""
+"Vyvinutím {from_pokemon} ({to_pokemon} sebere Poké Ball a objeví se na "
+"volném místě v partě"
+
+#: splinext/pokedex/helpers.py:394
+#, fuzzy
+msgid "Do something"
+msgstr "nic"
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:398
+msgid "{0}s only"
+msgstr ""
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:400
+msgid "during the {0}"
+msgstr "během {0}"
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:403
+msgid "starting at level {0}"
+msgstr "od úrovně {0}"
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:405
+msgid "around {0}"
+msgstr "poblíž {0}"
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:407
+msgid "while holding {article} {item}"
+msgstr "při držení {article} {item}"
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:411
+msgid "knowing {0}"
+msgstr "umějíc {0}"
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:413
+msgid "with at least {0} happiness"
+msgstr "s alespoň {0} spokojenosti"
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:416
+msgid "with at least {0} beauty"
+msgstr "s alespoň {0} krásy"
+
+#: splinext/pokedex/helpers.py:421
+msgid "<"
+msgstr "<"
+
+#: splinext/pokedex/helpers.py:423
+msgid ">"
+msgstr ">"
+
+#: splinext/pokedex/helpers.py:425
+msgid "="
+msgstr "="
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:427
+msgid "when Attack {0} Defense"
+msgstr "když útok {0} obrana"
 
 #. Py2Format
 #: splinext/pokedex/templates/pokedex/ability.mako:6
@@ -180,14 +324,14 @@ msgstr "Efekt"
 #: splinext/pokedex/templates/pokedex/item.mako:84
 #: splinext/pokedex/templates/pokedex/item.mako:149
 #: splinext/pokedex/templates/pokedex/move.mako:177
-#: splinext/pokedex/templates/pokedex/pokemon.mako:412
+#: splinext/pokedex/templates/pokedex/pokemon.mako:391
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:127
 msgid "Flavor"
 msgstr "Omáčka okolo"
 
 #: splinext/pokedex/templates/pokedex/ability.mako:58
 #: splinext/pokedex/templates/pokedex/move.mako:180
-#: splinext/pokedex/templates/pokedex/pokemon.mako:420
+#: splinext/pokedex/templates/pokedex/pokemon.mako:399
 msgid "Flavor Text"
 msgstr "Popisky"
 
@@ -204,14 +348,14 @@ msgstr "Pokémoni"
 
 #: splinext/pokedex/templates/pokedex/ability.mako:97
 #: splinext/pokedex/templates/pokedex/move.mako:369
-#: splinext/pokedex/templates/pokedex/pokemon.mako:643
+#: splinext/pokedex/templates/pokedex/pokemon.mako:610
 #: splinext/pokedex/templates/pokedex/type.mako:113
 msgid "External Links"
 msgstr "Externí odkazy (v angličtině)"
 
 #: splinext/pokedex/templates/pokedex/ability.mako:99
 #: splinext/pokedex/templates/pokedex/move.mako:374
-#: splinext/pokedex/templates/pokedex/pokemon.mako:675
+#: splinext/pokedex/templates/pokedex/pokemon.mako:643
 #: splinext/pokedex/templates/pokedex/type.mako:119
 #: splinext/pokedex/templates/pokedex/type.mako:122
 msgid "Bulbapedia"
@@ -219,19 +363,19 @@ msgstr "Bulbapedie"
 
 #: splinext/pokedex/templates/pokedex/ability.mako:100
 #: splinext/pokedex/templates/pokedex/move.mako:375
-#: splinext/pokedex/templates/pokedex/pokemon.mako:679
+#: splinext/pokedex/templates/pokedex/pokemon.mako:647
 msgid "Legendary Pokémon"
 msgstr "Legendary Pokémon"
 
 #: splinext/pokedex/templates/pokedex/ability.mako:101
 #: splinext/pokedex/templates/pokedex/move.mako:377
-#: splinext/pokedex/templates/pokedex/pokemon.mako:681
+#: splinext/pokedex/templates/pokedex/pokemon.mako:649
 msgid "Serebii.net"
 msgstr "Serebii.net"
 
 #: splinext/pokedex/templates/pokedex/ability.mako:102
 #: splinext/pokedex/templates/pokedex/move.mako:378
-#: splinext/pokedex/templates/pokedex/pokemon.mako:682
+#: splinext/pokedex/templates/pokedex/pokemon.mako:650
 #: splinext/pokedex/templates/pokedex/type.mako:120
 #: splinext/pokedex/templates/pokedex/type.mako:123
 msgid "Smogon"
@@ -253,9 +397,8 @@ msgstr "Gen."
 #: splinext/pokedex/templates/pokedex/nature_list.mako:31
 #: splinext/pokedex/templates/pokedex/search/moves.mako:265
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:378
-#, fuzzy
 msgid "Name"
-msgstr "Jména"
+msgstr "Jméno"
 
 #: splinext/pokedex/templates/pokedex/cheat_unlocked.mako:6
 msgid "idspispopd"
@@ -464,6 +607,21 @@ msgstr ""
 msgid "Item"
 msgstr "Věci"
 
+#: splinext/pokedex/templates/pokedex/lib.mako:281
+#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:53
+msgid "Search: "
+msgstr "Vyhledat: "
+
+#: splinext/pokedex/templates/pokedex/lib.mako:281
+#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:43
+#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:53
+#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:81
+#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:96
+#: splinext/pokedex/templates/pokedex/search/moves.mako:253
+#: splinext/pokedex/templates/pokedex/search/pokemon.mako:359
+msgid "Search"
+msgstr "Vyhledávání"
+
 #. Py2Format
 #: splinext/pokedex/templates/pokedex/location.mako:5
 #, fuzzy, python-format
@@ -471,7 +629,7 @@ msgid "%s - Locations"
 msgstr "$s - Umístění"
 
 #: splinext/pokedex/templates/pokedex/location.mako:11
-#: splinext/pokedex/templates/pokedex/pokemon.mako:551
+#: splinext/pokedex/templates/pokedex/pokemon.mako:518
 msgid "Locations"
 msgstr "Umístění"
 
@@ -525,7 +683,7 @@ msgid "Damage Dealt"
 msgstr "Způsobené zranění"
 
 #: splinext/pokedex/templates/pokedex/move.mako:65
-#: splinext/pokedex/templates/pokedex/pokemon.mako:337
+#: splinext/pokedex/templates/pokedex/pokemon.mako:316
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:118
 #: splinext/pokedex/templates/pokedex/gadgets/stat_calculator.mako:68
 msgid "Stats"
@@ -672,13 +830,13 @@ msgid "No other moves have the same effect as %s"
 msgstr "Zádný jiný útok nemá stejný efekt jako %s"
 
 #: splinext/pokedex/templates/pokedex/move.mako:372
-#: splinext/pokedex/templates/pokedex/pokemon.mako:673
+#: splinext/pokedex/templates/pokedex/pokemon.mako:641
 #: splinext/pokedex/templates/pokedex/type.mako:116
 msgid "Azure Heights"
 msgstr "Azure Heights"
 
 #: splinext/pokedex/templates/pokedex/move.mako:376
-#: splinext/pokedex/templates/pokedex/pokemon.mako:680
+#: splinext/pokedex/templates/pokedex/pokemon.mako:648
 msgid "PsyPoke"
 msgstr "PsyPoke"
 
@@ -743,6 +901,8 @@ msgid ""
 "This nature is neutral; it does not affect stats and causes no flavor "
 "preference."
 msgstr ""
+"Tato povaha je neutrální; neovlivňuje staty a nezpůsobuje oblíbenost "
+"chutí."
 
 #: splinext/pokedex/templates/pokedex/nature.mako:43
 msgid "Stat changes"
@@ -761,7 +921,7 @@ msgstr "-10%"
 
 #: splinext/pokedex/templates/pokedex/nature.mako:48
 msgid "Taste preference"
-msgstr ""
+msgstr "Oblíbenost chutí"
 
 #. Py2Format
 #: splinext/pokedex/templates/pokedex/nature.mako:50
@@ -841,7 +1001,7 @@ msgid "Hates flavor"
 msgstr ""
 
 #. Py3Format
-#: splinext/pokedex/templates/pokedex/pokemon.mako:11
+#: splinext/pokedex/templates/pokedex/pokemon.mako:10
 msgid "{name} – Pokémon #{number}"
 msgstr "{name} – Pokémon č. {number}"
 
@@ -878,177 +1038,205 @@ msgstr "Křížení"
 msgid "Gender"
 msgstr "Pohlaví"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:117
+#: splinext/pokedex/templates/pokedex/pokemon.mako:114
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:111
 msgid "Egg groups"
 msgstr "Skupiny pro křížení"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:132
+#: splinext/pokedex/templates/pokedex/pokemon.mako:126
 msgid "Hatch counter"
 msgstr "Počítadlo líhnutí"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:141
+#: splinext/pokedex/templates/pokedex/pokemon.mako:132
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:506
 msgid "Steps to hatch"
 msgstr "Kroků k vylíhnutí"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:153
+#: splinext/pokedex/templates/pokedex/pokemon.mako:140
+msgid "With Magma Armor or Flame Body"
+msgstr ""
+
+#: splinext/pokedex/templates/pokedex/pokemon.mako:144
 msgid "Compatibility"
 msgstr "Kompatibilita"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:156
+#: splinext/pokedex/templates/pokedex/pokemon.mako:147
 msgid ""
 "Ditto can breed with any other breedable Pokémon, but can never produce a"
 " Ditto egg."
 msgstr "Ditto lze křížit s každým křížitelným Pokémonem kromě Ditta."
 
 #. Py3Format
-#: splinext/pokedex/templates/pokedex/pokemon.mako:159
+#: splinext/pokedex/templates/pokedex/pokemon.mako:150
 msgid "{0} cannot breed."
 msgstr "{0} se nedá křížit"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:174
+#: splinext/pokedex/templates/pokedex/pokemon.mako:165
 msgid "Training"
 msgstr "Trénink"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:176
+#: splinext/pokedex/templates/pokedex/pokemon.mako:167
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:113
 msgid "Base EXP"
 msgstr "Zákl. EXP"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:185
+#: splinext/pokedex/templates/pokedex/pokemon.mako:173
 msgid "EXP at level"
 msgstr "EXP na úrovni"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:187
+#: splinext/pokedex/templates/pokedex/pokemon.mako:175
 msgid "Effort points"
 msgstr "\"Effort body\""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:197
+#: splinext/pokedex/templates/pokedex/pokemon.mako:185
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:115
 msgid "Capture rate"
 msgstr "Chytitelnost"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:205
+#: splinext/pokedex/templates/pokedex/pokemon.mako:190
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:114
 msgid "Base happiness"
 msgstr "Zákl. spokojenost"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:213
+#: splinext/pokedex/templates/pokedex/pokemon.mako:195
 msgid "Growth rate"
 msgstr "Růst"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:223
+#: splinext/pokedex/templates/pokedex/pokemon.mako:202
 msgid "Wild held items"
 msgstr "Držené věci u výskytů"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:251
+#: splinext/pokedex/templates/pokedex/pokemon.mako:230
 msgid "nothing"
 msgstr "nic"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:262
+#: splinext/pokedex/templates/pokedex/pokemon.mako:241
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:208
 msgid "Evolution"
 msgstr "Vývin"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:265
+#: splinext/pokedex/templates/pokedex/pokemon.mako:244
+#: splinext/pokedex/templates/pokedex/pokemon.mako:393
+#: splinext/pokedex/templates/pokedex/pokemon.mako:520
 msgid "See also:"
 msgstr "Viz"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:267
+#: splinext/pokedex/templates/pokedex/pokemon.mako:246
 msgid "Compare these Pokémon"
 msgstr "Porovnat tyto Pokémony"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:274
+#: splinext/pokedex/templates/pokedex/pokemon.mako:253
 msgid "Baby"
 msgstr "Mládě"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:275
+#: splinext/pokedex/templates/pokedex/pokemon.mako:254
 msgid "Basic"
 msgstr "Základní"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:276
+#: splinext/pokedex/templates/pokedex/pokemon.mako:255
 msgid "Stage 1"
 msgstr "1. vývin"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:277
+#: splinext/pokedex/templates/pokedex/pokemon.mako:256
 msgid "Stage 2"
 msgstr "2. vývin"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:312
+#: splinext/pokedex/templates/pokedex/pokemon.mako:291
 msgid "Either parent must hold "
 msgstr "Jeden z rodičů musí držet "
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:371
+#. Py2Format
+#: splinext/pokedex/templates/pokedex/pokemon.mako:302
+#, fuzzy, python-format
+msgid "%s Forms"
+msgstr "%s - omáčka okolo"
+
+#: splinext/pokedex/templates/pokedex/pokemon.mako:337
+msgid "Level"
+msgstr ""
+
+#: splinext/pokedex/templates/pokedex/pokemon.mako:344
+#: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:124
+#: splinext/pokedex/templates/pokedex/gadgets/stat_calculator.mako:108
+#: splinext/pokedex/templates/pokedex/search/pokemon.mako:255
+#: splinext/pokedex/templates/pokedex/search/pokemon.mako:448
+msgid "Effort"
+msgstr ""
+
+#: splinext/pokedex/templates/pokedex/pokemon.mako:350
 msgid "Percentile rank"
 msgstr "Percentilní hodnocení"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:371
+#: splinext/pokedex/templates/pokedex/pokemon.mako:350
 msgid "Pctile"
 msgstr "Percentil"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:372
+#: splinext/pokedex/templates/pokedex/pokemon.mako:351
 msgid "Min IVs"
 msgstr "Min. IV"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:373
+#: splinext/pokedex/templates/pokedex/pokemon.mako:352
 msgid "Max IVs"
 msgstr "Max. IV"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:426
+#: splinext/pokedex/templates/pokedex/pokemon.mako:393
+msgid "Detailed flavor page covering all versions"
+msgstr ""
+
+#: splinext/pokedex/templates/pokedex/pokemon.mako:405
 msgid "Sprites"
 msgstr "Sprity"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:445
+#: splinext/pokedex/templates/pokedex/pokemon.mako:424
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:36
 msgid "Miscellany"
 msgstr "Různé"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:447
+#: splinext/pokedex/templates/pokedex/pokemon.mako:426
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:38
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:154
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:476
 msgid "Species"
 msgstr "Druh"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:456
+#: splinext/pokedex/templates/pokedex/pokemon.mako:432
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:47
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:155
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:480
 msgid "Color"
 msgstr "Barva"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:466
+#: splinext/pokedex/templates/pokedex/pokemon.mako:439
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:57
 msgid "Cry"
 msgstr "Zvuk"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:479
+#: splinext/pokedex/templates/pokedex/pokemon.mako:452
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:70
 msgid "Download"
 msgstr "Stáhnout"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:484
+#: splinext/pokedex/templates/pokedex/pokemon.mako:457
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:75
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:156
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:484
 msgid "Habitat"
 msgstr "Prostředí"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:495
+#: splinext/pokedex/templates/pokedex/pokemon.mako:465
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:86
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:157
 msgid "Footprint"
 msgstr "Tlapa"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:499
+#: splinext/pokedex/templates/pokedex/pokemon.mako:469
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:90
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:158
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:494
 msgid "Shape"
 msgstr "Tvar těla"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:512
+#: splinext/pokedex/templates/pokedex/pokemon.mako:479
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:104
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:140
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:460
@@ -1056,7 +1244,7 @@ msgstr "Tvar těla"
 msgid "Height"
 msgstr "Velikost"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:531
+#: splinext/pokedex/templates/pokedex/pokemon.mako:498
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:124
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:152
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:464
@@ -1064,7 +1252,19 @@ msgstr "Velikost"
 msgid "Weight"
 msgstr "Hmotnost"
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:677
+#: splinext/pokedex/templates/pokedex/pokemon.mako:520
+msgid "Ridiculously detailed breakdown"
+msgstr ""
+
+#: splinext/pokedex/templates/pokedex/pokemon.mako:610
+msgid "header id|links"
+msgstr ""
+
+#: splinext/pokedex/templates/pokedex/pokemon.mako:639
+msgid "Official veekun"
+msgstr "Anglický veekun"
+
+#: splinext/pokedex/templates/pokedex/pokemon.mako:645
 msgid "Gengar and Haunter's Pokémon Dungeon"
 msgstr "Gengar and Haunter's Pokémon Dungeon"
 
@@ -1090,19 +1290,6 @@ msgstr "%s - omáčka okolo"
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:96
 msgid "Search:"
 msgstr "Vyhledat:"
-
-#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:43
-#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:53
-#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:81
-#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:96
-#: splinext/pokedex/templates/pokedex/search/moves.mako:253
-#: splinext/pokedex/templates/pokedex/search/pokemon.mako:359
-msgid "Search"
-msgstr "Vyhledávání"
-
-#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:53
-msgid "Search: "
-msgstr "Vyhledat: "
 
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:144
 msgid "Pokédex Description"
@@ -1182,11 +1369,11 @@ msgstr "Black & White"
 
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:606
 msgid "Miscellaneous Game Art"
-msgstr ""
+msgstr "Různá herní grafika"
 
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:609
 msgid "HeartGold &a SoulSilver Overworld"
-msgstr "HeartGold & SoulSilver Overworld\""
+msgstr "HeartGold a SoulSilver mimo souboj"
 
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:623
 msgid "overworld sprite|Left"
@@ -1206,7 +1393,7 @@ msgstr ""
 
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:673
 msgid "Female"
-msgstr ""
+msgstr "Samička"
 
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:718
 msgid "Other Images"
@@ -1343,7 +1530,7 @@ msgid ""
 msgstr ""
 "Strávil(a) jsi posledních šest hodin snažením se chytit Giratinu pomocí "
 "UltraBallu?  Já taky!  Je to blb.  Tato pomůcka ti řekne jaký ball je "
-"nejlepší proti tvému cílu, a jak dlouho by mohlo trvat ho chytit."
+"nejlepší proti tvému cíli, a jak dlouho by mohlo trvat ho chytit."
 
 #: splinext/pokedex/templates/pokedex/gadgets/capture_rate.mako:21
 msgid "Target Pokémon"
@@ -1358,7 +1545,7 @@ msgid ""
 "These affect the functionality of some specialty balls, but aren't part "
 "of the regular capture rate calculations.  You can skip them if you want."
 msgstr ""
-"Tyhle ovlivňují funkčnos nějakých zvláštních ballů, ale nejsou součástí "
+"Tyhle ovlivňují funkčnost nějakých zvláštních ballů, ale nejsou součástí "
 "normálních kalkulací chytitelnosti.  Jestli chceš, můžeš je přeskočit."
 
 #: splinext/pokedex/templates/pokedex/gadgets/capture_rate.mako:47
@@ -1492,13 +1679,6 @@ msgstr "Křížení + Trénování"
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:123
 msgid "Base stat total"
 msgstr "Součet base statů"
-
-#: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:124
-#: splinext/pokedex/templates/pokedex/gadgets/stat_calculator.mako:108
-#: splinext/pokedex/templates/pokedex/search/pokemon.mako:255
-#: splinext/pokedex/templates/pokedex/search/pokemon.mako:448
-msgid "Effort"
-msgstr ""
 
 #: splinext/pokedex/templates/pokedex/gadgets/stat_calculator.mako:17
 msgid ""
@@ -1706,9 +1886,8 @@ msgstr ""
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:6
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:13
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:155
-#, fuzzy
 msgid "Pokémon Search"
-msgstr "Úžasné vyhledávání"
+msgstr "Pokémonní vyhledávání"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:30
 msgid "It seems you entered something bogus for:"
@@ -1723,7 +1902,7 @@ msgstr ""
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:227
 msgid "Generation"
-msgstr ""
+msgstr "Generace"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:242
 msgid ""
@@ -1741,7 +1920,7 @@ msgstr ""
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:247
 msgid "Base stats"
-msgstr ""
+msgstr "Základní staty"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:263
 msgid "Breeding/Training"
@@ -1753,7 +1932,7 @@ msgstr ""
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:283
 msgid "Pokémon must have all of these moves:"
-msgstr ""
+msgstr "Pokémon musí mít všechny následující útoky:"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:329
 msgid "e.g.: <code>* $id $name</code> becomes <code>&bull; 133 Eevee</code>"
@@ -1761,7 +1940,7 @@ msgstr ""
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:382
 msgid "EXP to L100"
-msgstr ""
+msgstr "EXP do 100. úrovně"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:396
 #, fuzzy
@@ -1769,55 +1948,52 @@ msgid "Ability"
 msgstr "Kompatibilita"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:410
-#, fuzzy
 msgid "Egg Group"
-msgstr "Skupiny pro křížení"
+msgstr "Skupina pro křížení"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:420
-#, fuzzy
 msgid "Hit Points"
-msgstr "\"Effort body\""
+msgstr "HP (životy)"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:424
 msgid "Attack"
-msgstr ""
+msgstr "Útok"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:424
 msgid "Atk"
-msgstr ""
+msgstr "Út"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:428
 msgid "Defense"
-msgstr ""
+msgstr "Obrana"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:428
 msgid "Def"
-msgstr ""
+msgstr "Obr"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:432
 msgid "Special Attack"
-msgstr ""
+msgstr "Speciální útok"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:432
 msgid "SpA"
-msgstr ""
+msgstr "SpÚ"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:436
-#, fuzzy
 msgid "Special Defense"
-msgstr "Zvláštní efekt pro útoky"
+msgstr "Speciální obrana"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:436
 msgid "SpD"
-msgstr ""
+msgstr "SpO"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:440
 msgid "Spd"
-msgstr ""
+msgstr "Rych"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:444
 msgid "Total"
-msgstr ""
+msgstr "Celkem"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:502
 #, fuzzy
@@ -1829,13 +2005,12 @@ msgid "Hatch"
 msgstr ""
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:506
-#, fuzzy
 msgid "Steps"
-msgstr "Chuť"
+msgstr "Kroků"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:510
 msgid "EXP"
-msgstr ""
+msgstr "EXP"
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:514
 msgid "Cap."
@@ -1843,7 +2018,7 @@ msgstr ""
 
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:518
 msgid ":)"
-msgstr ""
+msgstr ":)"
 
 #: splinext/pokedex/templates/widgets/pokedex_lookup.mako:7
 msgid "lookup widget|Pokédex"
@@ -1851,22 +2026,13 @@ msgstr ""
 
 #: splinext/pokedex/templates/widgets/pokedex_lookup.mako:8
 msgid "Help"
-msgstr ""
+msgstr "Pomoc"
 
 #: splinext/pokedex/templates/widgets/pokedex_lookup.mako:8
 msgid "Help!"
-msgstr ""
+msgstr "Pomoc!"
 
 #: splinext/pokedex/templates/widgets/pokedex_lookup.mako:11
 msgid "lookup widget|Look up"
 msgstr ""
-
-#~ msgid "2. generace"
-#~ msgstr ""
-
-#~ msgid "3. generace"
-#~ msgstr ""
-
-#~ msgid "4. generace"
-#~ msgstr ""
 

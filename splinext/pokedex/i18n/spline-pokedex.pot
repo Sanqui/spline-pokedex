@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: spline-pokedex 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2010-10-04 19:17+0200\n"
+"POT-Creation-Date: 2010-10-09 17:24+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
-#: splinext/pokedex/__init__.py:170
+#: splinext/pokedex/__init__.py:176
 #: splinext/pokedex/templates/pokedex/ability.mako:11
 #: splinext/pokedex/templates/pokedex/ability_list.mako:9
 #: splinext/pokedex/templates/pokedex/item.mako:10
@@ -43,11 +43,11 @@ msgstr ""
 msgid "Pokédex"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:171
+#: splinext/pokedex/__init__.py:177
 msgid "Core pages"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:172
+#: splinext/pokedex/__init__.py:178
 #: splinext/pokedex/templates/pokedex/nature.mako:107
 #: splinext/pokedex/templates/pokedex/pokemon.mako:18
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:23
@@ -62,14 +62,14 @@ msgstr ""
 msgid "Pokémon"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:173 splinext/pokedex/__init__.py:176
+#: splinext/pokedex/__init__.py:179 splinext/pokedex/__init__.py:182
 msgid "Awesome search"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:175 splinext/pokedex/templates/pokedex/move.mako:13
+#: splinext/pokedex/__init__.py:181 splinext/pokedex/templates/pokedex/move.mako:13
 #: splinext/pokedex/templates/pokedex/move_list.mako:5
 #: splinext/pokedex/templates/pokedex/move_list.mako:11
-#: splinext/pokedex/templates/pokedex/pokemon.mako:586
+#: splinext/pokedex/templates/pokedex/pokemon.mako:553
 #: splinext/pokedex/templates/pokedex/type.mako:96
 #: splinext/pokedex/templates/pokedex/search/moves.mako:12
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:278
@@ -77,13 +77,13 @@ msgstr ""
 msgid "Moves"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:178 splinext/pokedex/templates/pokedex/type.mako:12
+#: splinext/pokedex/__init__.py:184 splinext/pokedex/templates/pokedex/type.mako:12
 #: splinext/pokedex/templates/pokedex/type_list.mako:5
 #: splinext/pokedex/templates/pokedex/type_list.mako:11
 msgid "Types"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:179
+#: splinext/pokedex/__init__.py:185
 #: splinext/pokedex/templates/pokedex/ability.mako:12
 #: splinext/pokedex/templates/pokedex/ability_list.mako:10
 #: splinext/pokedex/templates/pokedex/pokemon.mako:49
@@ -91,7 +91,7 @@ msgstr ""
 msgid "Abilities"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:180 splinext/pokedex/templates/pokedex/item.mako:11
+#: splinext/pokedex/__init__.py:186 splinext/pokedex/templates/pokedex/item.mako:11
 #: splinext/pokedex/templates/pokedex/item_list.mako:5
 #: splinext/pokedex/templates/pokedex/item_list.mako:11
 #: splinext/pokedex/templates/pokedex/item_list.mako:17
@@ -99,45 +99,186 @@ msgstr ""
 msgid "Items"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:181
+#: splinext/pokedex/__init__.py:187
 #: splinext/pokedex/templates/pokedex/nature.mako:12
 #: splinext/pokedex/templates/pokedex/nature_list.mako:5
 #: splinext/pokedex/templates/pokedex/nature_list.mako:11
 msgid "Natures"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:183
+#: splinext/pokedex/__init__.py:189
 #: splinext/pokedex/templates/pokedex/gadgets/capture_rate.mako:12
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:10
 #: splinext/pokedex/templates/pokedex/gadgets/stat_calculator.mako:12
 msgid "Gadgets"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:184
+#: splinext/pokedex/__init__.py:190
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:4
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:11
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:17
 msgid "Compare Pokémon"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:185
+#: splinext/pokedex/__init__.py:191
 #: splinext/pokedex/templates/pokedex/gadgets/capture_rate.mako:6
 #: splinext/pokedex/templates/pokedex/gadgets/capture_rate.mako:13
 msgid "Pokéball performance"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:186
+#: splinext/pokedex/__init__.py:192
 #: splinext/pokedex/templates/pokedex/gadgets/stat_calculator.mako:6
 #: splinext/pokedex/templates/pokedex/gadgets/stat_calculator.mako:13
 msgid "Stat calculator"
 msgstr ""
 
-#: splinext/pokedex/__init__.py:188
+#: splinext/pokedex/__init__.py:194
 msgid "Etc."
 msgstr ""
 
-#: splinext/pokedex/__init__.py:189
+#: splinext/pokedex/__init__.py:195
 msgid "Downloads"
+msgstr ""
+
+#. Py2Format
+#: splinext/pokedex/helpers.py:181 splinext/pokedex/helpers.py:182
+#, python-format
+msgid "Generation %d"
+msgstr ""
+
+#. Py2Format
+#: splinext/pokedex/helpers.py:295
+#, python-format
+msgid "%s: %s"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:353
+msgid "genderless"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:354
+msgid "always male"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:355
+msgid "⅞ male, ⅛ female"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:356
+msgid "¾ male, ¼ female"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:357
+msgid "⅝ male, ⅜ female"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:358
+msgid "½ male, ½ female"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:359
+msgid "⅜ male, ⅝ female"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:360
+msgid "¼ male, ¾ female"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:361
+msgid "⅛ male, ⅞ female"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:362
+msgid "always female"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:368
+msgid "an"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:369
+msgid "a"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:379
+msgid "Level up"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:381
+msgid "Trade"
+msgstr ""
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:384
+msgid "Use {article} {item}"
+msgstr ""
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:389
+msgid ""
+"Evolve {from_pokemon} ({to_pokemon} will consume a Poké Ball and appear in a "
+"free party slot)"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:394
+msgid "Do something"
+msgstr ""
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:398
+msgid "{0}s only"
+msgstr ""
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:400
+msgid "during the {0}"
+msgstr ""
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:403
+msgid "starting at level {0}"
+msgstr ""
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:405
+msgid "around {0}"
+msgstr ""
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:407
+msgid "while holding {article} {item}"
+msgstr ""
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:411
+msgid "knowing {0}"
+msgstr ""
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:413
+msgid "with at least {0} happiness"
+msgstr ""
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:416
+msgid "with at least {0} beauty"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:421
+msgid "<"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:423
+msgid ">"
+msgstr ""
+
+#: splinext/pokedex/helpers.py:425
+msgid "="
+msgstr ""
+
+#. Py3Format
+#: splinext/pokedex/helpers.py:427
+msgid "when Attack {0} Defense"
 msgstr ""
 
 #. Py2Format
@@ -175,14 +316,14 @@ msgstr ""
 #: splinext/pokedex/templates/pokedex/item.mako:84
 #: splinext/pokedex/templates/pokedex/item.mako:149
 #: splinext/pokedex/templates/pokedex/move.mako:177
-#: splinext/pokedex/templates/pokedex/pokemon.mako:412
+#: splinext/pokedex/templates/pokedex/pokemon.mako:391
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:127
 msgid "Flavor"
 msgstr ""
 
 #: splinext/pokedex/templates/pokedex/ability.mako:58
 #: splinext/pokedex/templates/pokedex/move.mako:180
-#: splinext/pokedex/templates/pokedex/pokemon.mako:420
+#: splinext/pokedex/templates/pokedex/pokemon.mako:399
 msgid "Flavor Text"
 msgstr ""
 
@@ -199,14 +340,14 @@ msgstr ""
 
 #: splinext/pokedex/templates/pokedex/ability.mako:97
 #: splinext/pokedex/templates/pokedex/move.mako:369
-#: splinext/pokedex/templates/pokedex/pokemon.mako:643
+#: splinext/pokedex/templates/pokedex/pokemon.mako:610
 #: splinext/pokedex/templates/pokedex/type.mako:113
 msgid "External Links"
 msgstr ""
 
 #: splinext/pokedex/templates/pokedex/ability.mako:99
 #: splinext/pokedex/templates/pokedex/move.mako:374
-#: splinext/pokedex/templates/pokedex/pokemon.mako:675
+#: splinext/pokedex/templates/pokedex/pokemon.mako:643
 #: splinext/pokedex/templates/pokedex/type.mako:119
 #: splinext/pokedex/templates/pokedex/type.mako:122
 msgid "Bulbapedia"
@@ -214,19 +355,19 @@ msgstr ""
 
 #: splinext/pokedex/templates/pokedex/ability.mako:100
 #: splinext/pokedex/templates/pokedex/move.mako:375
-#: splinext/pokedex/templates/pokedex/pokemon.mako:679
+#: splinext/pokedex/templates/pokedex/pokemon.mako:647
 msgid "Legendary Pokémon"
 msgstr ""
 
 #: splinext/pokedex/templates/pokedex/ability.mako:101
 #: splinext/pokedex/templates/pokedex/move.mako:377
-#: splinext/pokedex/templates/pokedex/pokemon.mako:681
+#: splinext/pokedex/templates/pokedex/pokemon.mako:649
 msgid "Serebii.net"
 msgstr ""
 
 #: splinext/pokedex/templates/pokedex/ability.mako:102
 #: splinext/pokedex/templates/pokedex/move.mako:378
-#: splinext/pokedex/templates/pokedex/pokemon.mako:682
+#: splinext/pokedex/templates/pokedex/pokemon.mako:650
 #: splinext/pokedex/templates/pokedex/type.mako:120
 #: splinext/pokedex/templates/pokedex/type.mako:123
 msgid "Smogon"
@@ -456,6 +597,21 @@ msgstr ""
 msgid "Item"
 msgstr ""
 
+#: splinext/pokedex/templates/pokedex/lib.mako:281
+#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:53
+msgid "Search: "
+msgstr ""
+
+#: splinext/pokedex/templates/pokedex/lib.mako:281
+#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:43
+#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:53
+#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:81
+#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:96
+#: splinext/pokedex/templates/pokedex/search/moves.mako:253
+#: splinext/pokedex/templates/pokedex/search/pokemon.mako:359
+msgid "Search"
+msgstr ""
+
 #. Py2Format
 #: splinext/pokedex/templates/pokedex/location.mako:5
 #, python-format
@@ -463,7 +619,7 @@ msgid "%s - Locations"
 msgstr ""
 
 #: splinext/pokedex/templates/pokedex/location.mako:11
-#: splinext/pokedex/templates/pokedex/pokemon.mako:551
+#: splinext/pokedex/templates/pokedex/pokemon.mako:518
 msgid "Locations"
 msgstr ""
 
@@ -511,7 +667,7 @@ msgid "Damage Dealt"
 msgstr ""
 
 #: splinext/pokedex/templates/pokedex/move.mako:65
-#: splinext/pokedex/templates/pokedex/pokemon.mako:337
+#: splinext/pokedex/templates/pokedex/pokemon.mako:316
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:118
 #: splinext/pokedex/templates/pokedex/gadgets/stat_calculator.mako:68
 msgid "Stats"
@@ -657,13 +813,13 @@ msgid "No other moves have the same effect as %s"
 msgstr ""
 
 #: splinext/pokedex/templates/pokedex/move.mako:372
-#: splinext/pokedex/templates/pokedex/pokemon.mako:673
+#: splinext/pokedex/templates/pokedex/pokemon.mako:641
 #: splinext/pokedex/templates/pokedex/type.mako:116
 msgid "Azure Heights"
 msgstr ""
 
 #: splinext/pokedex/templates/pokedex/move.mako:376
-#: splinext/pokedex/templates/pokedex/pokemon.mako:680
+#: splinext/pokedex/templates/pokedex/pokemon.mako:648
 msgid "PsyPoke"
 msgstr ""
 
@@ -821,7 +977,7 @@ msgid "Hates flavor"
 msgstr ""
 
 #. Py3Format
-#: splinext/pokedex/templates/pokedex/pokemon.mako:11
+#: splinext/pokedex/templates/pokedex/pokemon.mako:10
 msgid "{name} – Pokémon #{number}"
 msgstr ""
 
@@ -858,177 +1014,205 @@ msgstr ""
 msgid "Gender"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:117
+#: splinext/pokedex/templates/pokedex/pokemon.mako:114
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:111
 msgid "Egg groups"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:132
+#: splinext/pokedex/templates/pokedex/pokemon.mako:126
 msgid "Hatch counter"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:141
+#: splinext/pokedex/templates/pokedex/pokemon.mako:132
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:506
 msgid "Steps to hatch"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:153
+#: splinext/pokedex/templates/pokedex/pokemon.mako:140
+msgid "With Magma Armor or Flame Body"
+msgstr ""
+
+#: splinext/pokedex/templates/pokedex/pokemon.mako:144
 msgid "Compatibility"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:156
+#: splinext/pokedex/templates/pokedex/pokemon.mako:147
 msgid ""
 "Ditto can breed with any other breedable Pokémon, but can never produce a "
 "Ditto egg."
 msgstr ""
 
 #. Py3Format
-#: splinext/pokedex/templates/pokedex/pokemon.mako:159
+#: splinext/pokedex/templates/pokedex/pokemon.mako:150
 msgid "{0} cannot breed."
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:174
+#: splinext/pokedex/templates/pokedex/pokemon.mako:165
 msgid "Training"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:176
+#: splinext/pokedex/templates/pokedex/pokemon.mako:167
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:113
 msgid "Base EXP"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:185
+#: splinext/pokedex/templates/pokedex/pokemon.mako:173
 msgid "EXP at level"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:187
+#: splinext/pokedex/templates/pokedex/pokemon.mako:175
 msgid "Effort points"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:197
+#: splinext/pokedex/templates/pokedex/pokemon.mako:185
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:115
 msgid "Capture rate"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:205
+#: splinext/pokedex/templates/pokedex/pokemon.mako:190
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:114
 msgid "Base happiness"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:213
+#: splinext/pokedex/templates/pokedex/pokemon.mako:195
 msgid "Growth rate"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:223
+#: splinext/pokedex/templates/pokedex/pokemon.mako:202
 msgid "Wild held items"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:251
+#: splinext/pokedex/templates/pokedex/pokemon.mako:230
 msgid "nothing"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:262
+#: splinext/pokedex/templates/pokedex/pokemon.mako:241
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:208
 msgid "Evolution"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:265
+#: splinext/pokedex/templates/pokedex/pokemon.mako:244
+#: splinext/pokedex/templates/pokedex/pokemon.mako:393
+#: splinext/pokedex/templates/pokedex/pokemon.mako:520
 msgid "See also:"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:267
+#: splinext/pokedex/templates/pokedex/pokemon.mako:246
 msgid "Compare these Pokémon"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:274
+#: splinext/pokedex/templates/pokedex/pokemon.mako:253
 msgid "Baby"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:275
+#: splinext/pokedex/templates/pokedex/pokemon.mako:254
 msgid "Basic"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:276
+#: splinext/pokedex/templates/pokedex/pokemon.mako:255
 msgid "Stage 1"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:277
+#: splinext/pokedex/templates/pokedex/pokemon.mako:256
 msgid "Stage 2"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:312
+#: splinext/pokedex/templates/pokedex/pokemon.mako:291
 msgid "Either parent must hold "
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:371
+#. Py2Format
+#: splinext/pokedex/templates/pokedex/pokemon.mako:302
+#, python-format
+msgid "%s Forms"
+msgstr ""
+
+#: splinext/pokedex/templates/pokedex/pokemon.mako:337
+msgid "Level"
+msgstr ""
+
+#: splinext/pokedex/templates/pokedex/pokemon.mako:344
+#: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:124
+#: splinext/pokedex/templates/pokedex/gadgets/stat_calculator.mako:108
+#: splinext/pokedex/templates/pokedex/search/pokemon.mako:255
+#: splinext/pokedex/templates/pokedex/search/pokemon.mako:448
+msgid "Effort"
+msgstr ""
+
+#: splinext/pokedex/templates/pokedex/pokemon.mako:350
 msgid "Percentile rank"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:371
+#: splinext/pokedex/templates/pokedex/pokemon.mako:350
 msgid "Pctile"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:372
+#: splinext/pokedex/templates/pokedex/pokemon.mako:351
 msgid "Min IVs"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:373
+#: splinext/pokedex/templates/pokedex/pokemon.mako:352
 msgid "Max IVs"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:426
+#: splinext/pokedex/templates/pokedex/pokemon.mako:393
+msgid "Detailed flavor page covering all versions"
+msgstr ""
+
+#: splinext/pokedex/templates/pokedex/pokemon.mako:405
 msgid "Sprites"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:445
+#: splinext/pokedex/templates/pokedex/pokemon.mako:424
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:36
 msgid "Miscellany"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:447
+#: splinext/pokedex/templates/pokedex/pokemon.mako:426
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:38
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:154
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:476
 msgid "Species"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:456
+#: splinext/pokedex/templates/pokedex/pokemon.mako:432
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:47
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:155
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:480
 msgid "Color"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:466
+#: splinext/pokedex/templates/pokedex/pokemon.mako:439
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:57
 msgid "Cry"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:479
+#: splinext/pokedex/templates/pokedex/pokemon.mako:452
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:70
 msgid "Download"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:484
+#: splinext/pokedex/templates/pokedex/pokemon.mako:457
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:75
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:156
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:484
 msgid "Habitat"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:495
+#: splinext/pokedex/templates/pokedex/pokemon.mako:465
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:86
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:157
 msgid "Footprint"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:499
+#: splinext/pokedex/templates/pokedex/pokemon.mako:469
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:90
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:158
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:494
 msgid "Shape"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:512
+#: splinext/pokedex/templates/pokedex/pokemon.mako:479
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:104
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:140
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:460
@@ -1036,7 +1220,7 @@ msgstr ""
 msgid "Height"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:531
+#: splinext/pokedex/templates/pokedex/pokemon.mako:498
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:124
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:152
 #: splinext/pokedex/templates/pokedex/search/pokemon.mako:464
@@ -1044,7 +1228,19 @@ msgstr ""
 msgid "Weight"
 msgstr ""
 
-#: splinext/pokedex/templates/pokedex/pokemon.mako:677
+#: splinext/pokedex/templates/pokedex/pokemon.mako:520
+msgid "Ridiculously detailed breakdown"
+msgstr ""
+
+#: splinext/pokedex/templates/pokedex/pokemon.mako:610
+msgid "header id|links"
+msgstr ""
+
+#: splinext/pokedex/templates/pokedex/pokemon.mako:639
+msgid "Official veekun"
+msgstr ""
+
+#: splinext/pokedex/templates/pokedex/pokemon.mako:645
 msgid "Gengar and Haunter's Pokémon Dungeon"
 msgstr ""
 
@@ -1069,19 +1265,6 @@ msgstr ""
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:81
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:96
 msgid "Search:"
-msgstr ""
-
-#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:43
-#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:53
-#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:81
-#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:96
-#: splinext/pokedex/templates/pokedex/search/moves.mako:253
-#: splinext/pokedex/templates/pokedex/search/pokemon.mako:359
-msgid "Search"
-msgstr ""
-
-#: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:53
-msgid "Search: "
 msgstr ""
 
 #: splinext/pokedex/templates/pokedex/pokemon_flavor.mako:144
@@ -1458,13 +1641,6 @@ msgstr ""
 
 #: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:123
 msgid "Base stat total"
-msgstr ""
-
-#: splinext/pokedex/templates/pokedex/gadgets/compare_pokemon.mako:124
-#: splinext/pokedex/templates/pokedex/gadgets/stat_calculator.mako:108
-#: splinext/pokedex/templates/pokedex/search/pokemon.mako:255
-#: splinext/pokedex/templates/pokedex/search/pokemon.mako:448
-msgid "Effort"
 msgstr ""
 
 #: splinext/pokedex/templates/pokedex/gadgets/stat_calculator.mako:17
